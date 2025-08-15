@@ -24,7 +24,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-2 mt-8 md:mt-0 md:text-right">
+        <div className="flex flex-col space-y-2 mt-6 md:mt-0 md:text-right">
           <p className="text font-extralight">Ma - Zo</p>
           <p className="text font-extralight">12:00 - 20:00</p>
         </div>
