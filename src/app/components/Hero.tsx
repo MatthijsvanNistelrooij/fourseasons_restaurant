@@ -4,6 +4,7 @@ import hero from "/public/assets/about.jpg"
 export default function Hero() {
   return (
     <section className="bg-[#1a1a1a] text-white">
+
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h1
           className="text-[4rem] md:text-[8.5rem] leading-none"
@@ -28,18 +29,19 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col space-y-2 text-right">
-          <p className="text-lg font-light">Ma – Zo</p>
-          <p className="text-lg font-light">12:00 – 20:00</p>
+          <p className="text-lg font-light">Ma - Zo</p>
+          <p className="text-lg font-light">12:00 - 20:00</p>
         </div>
       </div>
 
-      <div className="max-w-full mx-auto px-4 mt-8">
+      <div className="max-w-7xl mx-auto px-4 mt-8">
         <Image
           src={hero}
           alt="hero"
           className="w-full h-auto object-contain"
           width={1920}
           height={500}
+          priority
         />
       </div>
     </section>
