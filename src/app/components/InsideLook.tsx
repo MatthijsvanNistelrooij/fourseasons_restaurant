@@ -9,7 +9,7 @@ import img5 from "/public/assets/img_5.jpg"
 const InsideLook = () => {
   const images = [img1, img2, img3, img4, img5]
   return (
-    <div className="px-4 py-16 max-w-7xl mx-auto text-center">
+    <div className="mt-10 x-4 py-16 max-w-7xl mx-auto text-center">
       <div className="mx-auto text-center max-w-5xl">
         <h1
           className="text-xl mb-4"
