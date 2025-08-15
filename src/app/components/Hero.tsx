@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section className="bg-[#1a1a1a] text-white">
-      <div className="max-w-6xl mx-auto px-4 pt-16">
+      <div id="home" className="max-w-6xl mx-auto px-4 pt-16">
         <h1
           className="text-[4rem] md:text-[8.5rem] leading-none"
           style={{ fontFamily: "var(--font-display)", color: "#f0f0f0" }}

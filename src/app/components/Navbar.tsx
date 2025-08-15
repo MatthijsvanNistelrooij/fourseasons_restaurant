@@ -2,6 +2,7 @@
 import Image from "next/image"
 import React, { useState } from "react"
 import logo from "/public/assets/logo.png"
+import Link from "next/link"
 
 const activePage = "Home"
 
@@ -14,11 +15,21 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+    setIsOpen(false)
+  }
 
   return (
-    <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0] relative">
+    <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0] sticky top-0 z-30">
       <div className="max-w-6xl mx-auto flex items-center justify-between p-3">
-        <div className="flex items-center gap-3">
+        <div
+          className="flex items-center gap-3 cursor-pointer"
+          onClick={handleClick}
+        >
           <Image src={logo} alt="logo" height={20} width={20} />
           <span
             className="-ml-3 tracking-wide text-[#cda36b]"
@@ -33,7 +44,7 @@ export default function Navbar() {
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`hover:text-[#f0f0f0] transition ${
@@ -41,7 +52,7 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="#reserve"

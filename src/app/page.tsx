@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import ImageDivider from "./components/ImageDivider"
 import welcome from "/public/four_seasons_welcome.png"
 import about from "/public/assets/about.jpg"
+import ContactInfo from "./components/ContactInfo"
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <InsideLook />
       <MenuSection />
       <ImageDivider image={welcome} />
+      <ContactInfo />
       <Footer />
     </div>
   )

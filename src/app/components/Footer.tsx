@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react"
 
 const Footer = () => {
   return (
-    <div className='p-20'>Footer</div>
+    <div id="inside" className="mt-10 x-4 py-16 max-w-7xl mx-auto text-center">
+      Footer
+    </div>
   )
 }
 

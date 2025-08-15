@@ -8,11 +8,11 @@ type ImageDividerProps = {
 
 const ImageDivider = ({ image }: ImageDividerProps) => {
   return (
-    <div className="mx-auto px-4 mt-8">
+    <div className="max-w-7xl mx-auto px-4 mt-8">
       <Image
         src={image}
         alt="hero"
-        className="w-full h-auto object-contain"
+        className="h-auto object-contain"
         width={1920}
         height={500}
         priority
