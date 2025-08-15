@@ -13,10 +13,10 @@ const page = () => {
     <div className="px-20">
       <Navbar />
       <Hero />
-      <ImageDivider image={about} />
+      {/* <ImageDivider image={about} /> */}
       <InsideLook />
       <MenuSection />
-      <ImageDivider image={welcome} />
+      {/* <ImageDivider image={welcome} /> */}
       <Footer />
     </div>
   )
