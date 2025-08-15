@@ -10,13 +10,13 @@ import about from "/public/assets/about.jpg"
 
 const page = () => {
   return (
-    <div className="px-20">
+    <div>
       <Navbar />
       <Hero />
-      {/* <ImageDivider image={about} /> */}
+      <ImageDivider image={about} />
       <InsideLook />
       <MenuSection />
-      {/* <ImageDivider image={welcome} /> */}
+      <ImageDivider image={welcome} />
       <Footer />
     </div>
   )
