@@ -14,23 +14,20 @@ export default function Hero() {
       </div>
 
       <div
-        className="max-w-6xl mx-auto px-4 py-8 flex justify-between"
+        className="flex flex-col md:flex-row max-w-6xl mx-auto px-4 py-8 justify-between"
         style={{ fontFamily: "var(--font-body)" }}
       >
         <div className="space-y-6">
-          <div className="pb-2 border-b border-[#f0f0f0]">
-            <p className="text font-extralight">Enjoy with us</p>
-            <p className="text font-extralight">
-              Reitemakersrijge 3, Groningen
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
+          <div className="pb-2 border-b border-[#f0f0f0] w-64">
+            <p className="font-extralight">Enjoy with us</p>
+            <p className="font-extralight">Reitemakersrijge 3, Groningen</p>
           </div>
-          <div className="pb-2 border-b border-[#f0f0f0]">
+          <div className="pb-2 border-b border-[#f0f0f0] w-64">
             <p className="text font-extralight">+31 6 17 28 490</p>
           </div>
         </div>
 
-        <div className="flex flex-col space-y-2 text-right">
+        <div className="flex flex-col space-y-2 mt-8 md:mt-0 md:text-right">
           <p className="text font-extralight">Ma - Zo</p>
           <p className="text font-extralight">12:00 - 20:00</p>
         </div>
