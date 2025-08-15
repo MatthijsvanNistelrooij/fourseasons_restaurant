@@ -1,6 +1,3 @@
-import Image from "next/image"
-import hero from "/public/assets/about.jpg"
-
 export default function Hero() {
   return (
     <section className="bg-[#1a1a1a] text-white">
@@ -14,7 +11,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="flex flex-col md:flex-row max-w-6xl mx-auto px-4 py-8 justify-between"
+        className="flex flex-col md:flex-row max-w-6xl mx-auto px-4 py-12 justify-between"
         style={{ fontFamily: "var(--font-body)" }}
       >
         <div className="space-y-6">
@@ -31,17 +28,6 @@ export default function Hero() {
           <p className="text font-extralight">Ma - Zo</p>
           <p className="text font-extralight">12:00 - 20:00</p>
         </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 mt-8">
-        <Image
-          src={hero}
-          alt="hero"
-          className="w-full h-auto object-contain"
-          width={1920}
-          height={500}
-          priority
-        />
       </div>
     </section>
   )
