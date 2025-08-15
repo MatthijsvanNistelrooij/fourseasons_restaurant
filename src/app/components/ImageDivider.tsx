@@ -6,15 +6,15 @@ type ImageDividerProps = {
   alt?: string
 }
 
-const ImageDivider = ({ image, alt = "hero" }: ImageDividerProps) => {
+const ImageDivider = ({ image }: ImageDividerProps) => {
   return (
-    <div className="relative w-full h-[500px] mx-auto">
+    <div className="mx-auto px-4 mt-8">
       <Image
         src={image}
-        alt={alt}
-        fill
-        sizes="100vw"
-        className="object-contain"
+        alt="hero"
+        className="w-full h-auto object-contain"
+        width={1920}
+        height={500}
         priority
       />
     </div>
