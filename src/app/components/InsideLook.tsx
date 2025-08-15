@@ -12,7 +12,7 @@ const InsideLook = () => {
     <div className="mt-10 x-4 py-16 max-w-7xl mx-auto text-center">
       <div className="mx-auto text-center max-w-5xl">
         <h1
-          className="text-xl mb-4"
+          className="text-2xl -tracking-tight mb-4"
           style={{ fontFamily: "Mayfair Display, serif" }}
         >
           INSIDE LOOK
@@ -29,19 +29,15 @@ const InsideLook = () => {
         </p>
       </div>
 
-      <div className="w-full flex justify-center items-start gap-14">
+      <div className="w-full flex justify-center items-start gap-20">
         {images.map((img, index) => (
-          <div
-            key={index}
-            className=""
-            style={{ marginTop: `${index * 5}%` }} // 1/8e = 12.5%
-          >
+          <div key={index} className="" style={{ marginTop: `${index * 5}%` }}>
             <Image
               src={img}
               alt={`hero-${index}`}
-              className="w-80 h-auto object-contain"
-              width={500}
-              height={200}
+              className="w-96 h-auto object-contain"
+              width={600}
+              height={100}
               priority
             />
           </div>

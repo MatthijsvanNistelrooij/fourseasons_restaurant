@@ -4,8 +4,7 @@ import hero from "/public/assets/about.jpg"
 export default function Hero() {
   return (
     <section className="bg-[#1a1a1a] text-white">
-
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 pt-16">
         <h1
           className="text-[4rem] md:text-[8.5rem] leading-none"
           style={{ fontFamily: "var(--font-display)", color: "#f0f0f0" }}
@@ -20,17 +19,20 @@ export default function Hero() {
       >
         <div className="space-y-6">
           <div className="pb-2 border-b border-[#f0f0f0]">
-            <p className="text-lg font-light">Enjoy with us</p>
-            <p className="text-lg font-light">Reitemakersrijge 3, Groningen</p>
+            <p className="text font-extralight">Enjoy with us</p>
+            <p className="text font-extralight">
+              Reitemakersrijge 3, Groningen
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
           </div>
           <div className="pb-2 border-b border-[#f0f0f0]">
-            <p className="text-lg font-light">+31 6 17 28 490</p>
+            <p className="text font-extralight">+31 6 17 28 490</p>
           </div>
         </div>
 
         <div className="flex flex-col space-y-2 text-right">
-          <p className="text-lg font-light">Ma - Zo</p>
-          <p className="text-lg font-light">12:00 - 20:00</p>
+          <p className="text font-extralight">Ma - Zo</p>
+          <p className="text font-extralight">12:00 - 20:00</p>
         </div>
       </div>
 

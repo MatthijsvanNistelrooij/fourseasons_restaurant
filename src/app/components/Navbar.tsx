@@ -13,7 +13,7 @@ const links = [
 export default function Navbar() {
   return (
     <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0]">
-      <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <div className="max-w-6xl mx-auto flex items-center justify-between p-3">
         <div className="flex items-center gap-3">
           <Image src={logo} alt="logo" height={20} width={20} />
           <span
