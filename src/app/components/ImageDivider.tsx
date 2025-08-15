@@ -13,8 +13,8 @@ const ImageDivider = ({ image, alt = "hero" }: ImageDividerProps) => {
         src={image}
         alt={alt}
         fill
-        sizes="w-full"
-        className="object-cover"
+        sizes="100vw"
+        className="object-contain"
         priority
       />
     </div>
