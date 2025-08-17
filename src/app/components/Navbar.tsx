@@ -67,7 +67,7 @@ export default function Navbar() {
         </nav>
 
         <button
-          className="md:hidden flex flex-col gap-[3px] focus:outline-none"
+          className="md:hidden flex flex-col gap-[3px] focus:outline-none cursor-pointer"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <span className="block w-6 h-[2px] bg-white"></span>

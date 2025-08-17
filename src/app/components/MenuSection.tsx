@@ -7,7 +7,7 @@ export default function MenuSection() {
   return (
     <section
       id="menu"
-      className="relative text-white mb-30 min-h-[10vh] flex items-center justify-center overflow-hidden"
+      className="relative text-white mb-10 md:mb-30 min-h-[10vh] flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <Image
@@ -15,14 +15,14 @@ export default function MenuSection() {
           alt="background leaf"
           fill
           priority
-          className="object-contain rotate-2 scale-120 md:translate-x-10 -translate-y-30"
+          className="object-contain rotate-2 scale-120 md:translate-x-10 -translate-y-70 md:-translate-y-30"
         />
       </div>
 
       <div className="relative w-full max-w-5xl mx-auto px-4 md:py-24 flex flex-col md:flex-row justify-between">
         <div className="flex flex-col gap-5">
           <div
-            className="text-2xl flex flex-col gap-4 mt-64"
+            className="text-2xl flex flex-col gap-4 mt-20 md:mt-64"
             style={{ fontFamily: "var(--font-display)" }}
           >
             MENU
