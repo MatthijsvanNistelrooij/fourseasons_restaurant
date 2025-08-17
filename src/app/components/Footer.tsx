@@ -19,7 +19,7 @@ const Footer = () => {
       id="contact"
       className="bg-[#1a1a1a] text-white border-[#f0f0f0] font-body"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 gap-12 py-20 mt-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 px-4 gap-12 py-20 mt-10">
         <div className="flex flex-col gap-6">
           <div
             className="flex items-center cursor-pointer"
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
 
           <div
-            className="font-light space-y-6 text-2xl mt-5"
+            className="font-light space-y-6 text-sm md:text-2xl mt-5"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <div className="space-y-4">
@@ -53,10 +53,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="md:ml-56">
+        <div className="lg:ml-56">
           <h3 className="font-bold text-lg mb-4">Openingstijden</h3>
           <ul
-            className="space-y-2 font-light text-xl"
+            className="space-y-2 font-light text-sm md:text-xl"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <li className="flex justify-left">
