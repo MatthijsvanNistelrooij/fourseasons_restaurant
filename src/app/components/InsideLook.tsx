@@ -1,5 +1,4 @@
 import React from "react"
-import ImageCarousel from "./ImageCarousel"
 
 const InsideLook = () => {
   return (
