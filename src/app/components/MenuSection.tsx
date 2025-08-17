@@ -15,7 +15,7 @@ export default function MenuSection() {
           alt="background leaf"
           fill
           priority
-          className="object-contain -rotate-15 scale-120 translate-x-10 -translate-y-20"
+          className="object-contain -rotate-15 scale-120 md:translate-x-10 -translate-y-50"
         />
       </div>
 
