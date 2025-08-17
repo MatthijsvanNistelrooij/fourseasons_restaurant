@@ -59,7 +59,7 @@ const Footer = () => {
         <div className="w-1/3">
           <h3 className="font-bold text-2xl mb-7">Openingstijden</h3>
           <ul
-            className="space-y-1 font-light text-sm md:text-2xl min-w-48 md:min-w-0"
+            className="space-y-1 font-light text-lg md:text-2xl min-w-48 md:min-w-0"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <li className="flex justify-left">
