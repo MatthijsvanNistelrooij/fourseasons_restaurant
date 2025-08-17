@@ -1,9 +1,9 @@
 export default function Hero() {
   return (
     <section className="bg-[#1a1a1a] text-white">
-      <div id="home" className="max-w-7xl mx-auto px-6 pt-20">
+      <div id="home" className="max-w-7xl mx-auto px-6 pt-10 md:pt-20">
         <h1
-          className="text-[3rem] sm:text-[5rem] lg:text-[8rem] xl:text-[9rem] leading-none"
+          className="text-[3rem] sm:text-[6rem] lg:text-[8rem] xl:text-[9rem] leading-none"
           style={{ fontFamily: "var(--font-display)", color: "#f0f0f0" }}
         >
           FOUR SEASONS
@@ -11,7 +11,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="flex flex-col md:flex-row max-w-7xl mx-auto px-6 py-16 justify-between mt-6"
+        className="flex flex-col md:flex-row max-w-7xl mx-auto px-6 py-6 md:py-16 justify-between"
         style={{ fontFamily: "var(--font-body)" }}
       >
         <div className="space-y-4">
