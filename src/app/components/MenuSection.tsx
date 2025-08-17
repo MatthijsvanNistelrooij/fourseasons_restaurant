@@ -4,7 +4,7 @@ import ReservationButton from "./ReservationButton"
 
 export default function MenuSection() {
   return (
-    <section id="menu" className="bg-[#1a1a1a] text-white relative min-h-[15vh] md:min-h-[50vh]">
+    <section id="menu" className="bg-[#1a1a1a] text-white relative min-h-[25vh] md:min-h-[70vh] mb-30">
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat bg-container"
         style={{

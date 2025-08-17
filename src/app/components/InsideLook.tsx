@@ -9,8 +9,8 @@ const InsideLook = () => {
           className="text-2xl -tracking-tight mb-4 mt-10"
           style={{
             fontFamily: "Mayfair Display, serif",
-            transform: "scaleY(1.3)", 
-            display: "inline-block", 
+            transform: "scaleY(1.3)",
+            display: "inline-block",
           }}
         >
           INSIDE LOOK
@@ -26,7 +26,6 @@ const InsideLook = () => {
           Come enjoy with us.
         </p>
       </div>
-      <ImageCarousel />
     </div>
   )
 }

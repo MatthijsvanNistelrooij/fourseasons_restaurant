@@ -8,7 +8,7 @@ type ImageDividerProps = {
 
 const ImageDivider = ({ image }: ImageDividerProps) => {
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="w-full flex justify-center items-start">
       <Image
         src={image}
         alt="hero"
