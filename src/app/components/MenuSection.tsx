@@ -39,7 +39,7 @@ export default function MenuSection() {
             className="mt-20"
           />
           <div
-            className="mt-20 border-t border-b border-gray-300 w-40 text-center px-4 py-2 inline-block font-light"
+            className="mt-20 border-t border-b border-gray-400 w-40 text-center px-4 py-2 inline-block"
             style={{ fontFamily: "var(--font-body)" }}
           >
             Enjoy with us
