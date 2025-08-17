@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="ml-56">
+        <div className="md:ml-56">
           <h3 className="font-bold text-lg mb-4">Openingstijden</h3>
           <ul
             className="space-y-2 font-extralight text-xl"
@@ -92,7 +92,7 @@ const Footer = () => {
       </div>
       <p
         style={{ fontFamily: "var(--font-body)" }}
-        className="text-xl font-extralight flex justify-center mt-10 mb-40"
+        className="text-xl font-extralight flex justify-center text-center mt-10 mb-40"
       >
         Copyright © 2025 Restaurant Four Seasons All rights reserved.
       </p>
