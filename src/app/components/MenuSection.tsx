@@ -15,14 +15,14 @@ export default function MenuSection() {
           alt="background leaf"
           fill
           priority
-          className="object-contain rotate-2 scale-120 md:translate-x-10 -translate-y-30 "
+          className="object-contain rotate-2 scale-120 md:translate-x-10 -translate-y-30"
         />
       </div>
 
-      <div className="relative w-full max-w-4xl mx-auto px-12 md:py-24 flex flex-col md:flex-row justify-between">
-        <div className="flex flex-col gap-5"> 
+      <div className="relative w-full max-w-5xl mx-auto px-12 md:py-24 flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col gap-5">
           <div
-            className="text-2xl flex flex-col gap-4 mt-60"
+            className="text-2xl flex flex-col gap-4 mt-64"
             style={{ fontFamily: "var(--font-display)" }}
           >
             MENU
