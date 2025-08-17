@@ -16,7 +16,7 @@ const InsideLook = () => {
           INSIDE LOOK
         </h1>
         <p
-          className="text-2xl font-light md:text-4xl text-[#f0f0f0] leading-15 mb-12"
+          className="text-2xl font-light md:text-4xl text-[#f0f0f0] leading-15 mb-12 p-5"
           style={{ fontFamily: "Lato, sans-serif" }}
         >
           Onze lunch- en dinercreaties worden met liefde bereid, geïnspireerd
