@@ -5,7 +5,7 @@ import logo from "/public/assets/logo.png"
 import Link from "next/link"
 
 const links = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   { label: "Inside look", href: "#inside" },
   { label: "Menu", href: "#menu" },
   { label: "Contact", href: "#contact" },
