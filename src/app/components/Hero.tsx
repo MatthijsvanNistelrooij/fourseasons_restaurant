@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="bg-[#1a1a1a] text-white">
       <div id="home" className="max-w-7xl mx-auto px-6 pt-10 md:pt-20">
         <h1
-          className="text-[4rem] sm:text-[5rem] md:text-[7rem] xl:text-[9rem] leading-none"
+          className="text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[9rem] leading-none"
           style={{ fontFamily: "var(--font-display)", color: "#f0f0f0" }}
         >
           FOUR SEASONS
