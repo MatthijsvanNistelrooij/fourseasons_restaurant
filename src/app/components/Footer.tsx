@@ -93,7 +93,7 @@ const Footer = () => {
       <div className="flex justify-center">
         <p
           style={{ fontFamily: "var(--font-body)" }}
-          className="text-xs text-[#f0f0f0] font-light flex justify-center w-64 md:w-full text-center mt-10 mb-20"
+          className="text-xs text-gray-300 font-light flex justify-center w-64 md:w-full text-center mt-10 mb-10"
         >
           Copyright © 2025 Restaurant Four Seasons All rights reserved.
         </p>
