@@ -4,19 +4,19 @@ import ReservationButton from "./ReservationButton"
 
 export default function MenuSection() {
   return (
-    <section id="menu" className="bg-[#1a1a1a] text-white relative min-h-[30vh]">
+    <section id="menu" className="bg-[#1a1a1a] text-white relative min-h-[50vh]">
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat bg-container"
         style={{
           backgroundImage: "url('/assets/four_seasons_leaf.png')",
           backgroundSize: "100%",
-          backgroundPosition: "center bottom",
+          backgroundPosition: "center center",
         }}
       ></div>
 
       <div className="relative max-w-3xl mx-auto px-4 py-24 flex flex-col md:flex-row justify-between gap-8">
         <div
-          className="flex flex-col gap-4 mt-20"
+          className="flex flex-col gap-4 mt-40"
           style={{ fontFamily: "var(--font-display)" }}
         >
           MENU
