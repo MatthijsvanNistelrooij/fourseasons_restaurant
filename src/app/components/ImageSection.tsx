@@ -6,7 +6,7 @@ type ImageDividerProps = {
   alt?: string
 }
 
-const ImageDivider = ({ image }: ImageDividerProps) => {
+const ImageSection = ({ image }: ImageDividerProps) => {
   return (
     <div className="w-full flex justify-center items-start">
       <Image
@@ -21,4 +21,4 @@ const ImageDivider = ({ image }: ImageDividerProps) => {
   )
 }
 
-export default ImageDivider
+export default ImageSection

@@ -38,8 +38,8 @@ const Footer = () => {
             className="font-light space-y-6 text-sm md:text-2xl mt-5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            <div className="space-y-4">
-              <div className="pb-2 border-b text-gray-300 border-[#f0f0f0] w-80 sm:w-72 md:w-96">
+            <div className="space-y-6">
+              <div className="pb-2 border-b text-gray-300 border-[#f0f0f0] w-80 sm:w-72 md:w-96 mt-2 space-y-2">
                 <p className="font-light">Enjoy with us</p>
                 <p className="font-light">Reitemakersrijge 3, Groningen</p>
               </div>
@@ -60,32 +60,32 @@ const Footer = () => {
             style={{ fontFamily: "var(--font-body)" }}
           >
             <li className="flex justify-left">
-              <span>Ma: </span>
+              <span>Ma:&nbsp;</span>
               <span>12:00 – 18:00</span>
             </li>
             <li className="flex justify-left">
-              <span>Di: </span>
+              <span>Di:&nbsp;</span>
               <span>10:00 – 19:00</span>
             </li>
             <li className="flex justify-left">
-              <span>Wo: </span>
+              <span>Wo:&nbsp;</span>
               <span>10:00 – 19:00</span>
             </li>
             <li className="flex justify-left">
-              <span>Do:</span>
+              <span>Do:&nbsp;</span>
               <span>10:00 – 19:00</span>
             </li>
             <li className="flex justify-left">
-              <span>Vr:</span>
+              <span>Vr:&nbsp;</span>
               <span>10:00 – 22:00</span>
             </li>
             <li className="flex justify-left">
-              <span>Za:</span>
+              <span>Za:&nbsp;</span>
               <span>12:00 – 22:00</span>
             </li>
             <li className="flex justify-left">
-              <span>Zo:</span>
-              <span>12:00 – 18:00</span>
+              <span>Zo:&nbsp;</span>
+              <span>Gesloten</span>
             </li>
           </ul>
         </div>

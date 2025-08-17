@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar"
 import InsideLook from "./components/InsideLook"
 import MenuSection from "./components/MenuSection"
 import Footer from "./components/Footer"
-import ImageDivider from "./components/ImageDivider"
+import ImageSection from "./components/ImageSection"
 import welcome from "/public/four_seasons_welcome.png"
 import about from "/public/assets/about.jpg"
 import ImageCarousel from "./components/ImageCarousel"
@@ -14,11 +14,11 @@ const page = () => {
     <div>
       <Navbar />
       <Hero />
-      <ImageDivider image={about} />
+      <ImageSection image={about} />
       <InsideLook />
       <ImageCarousel />
       <MenuSection />
-      <ImageDivider image={welcome} />
+      <ImageSection image={welcome} />
       <Footer />
     </div>
   )
