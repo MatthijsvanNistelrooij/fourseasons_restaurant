@@ -95,7 +95,7 @@ export default function Navbar() {
           ))}
           <a
             href="#reserve"
-            className="bg-white text-black px-4 py-2 rounded font-medium hover:bg-gray-200 transition"
+            className="bg-white text-black font-bold px-4 py-2 rounded hover:bg-gray-200 transition"
             onClick={() => setIsOpen(false)}
           >
             Reserveren
