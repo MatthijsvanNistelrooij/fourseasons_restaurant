@@ -78,7 +78,7 @@ export default function Navbar() {
 
       {isOpen && (
         <div
-          className="md:hidden absolute top-full left-0 w-full bg-[#1a1a1a] border-t border-[#f0f0f0] flex flex-col items-start p-4 gap-3"
+          className="md:hidden absolute top-full left-0 w-full bg-[#1a1a1a] border-b border-t border-[#f0f0f0] flex flex-col items-start p-4 gap-5"
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
