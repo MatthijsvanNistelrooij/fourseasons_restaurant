@@ -19,17 +19,25 @@ export default function MenuSection() {
         />
       </div>
 
-      <div className="relative w-full max-w-3xl mx-auto px-4 md:py-24 flex flex-col md:flex-row justify-between">
-        <div
-          className="flex flex-col gap-4 mt-60"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          MENU
+      <div className="relative w-full max-w-4xl mx-auto px-12 md:py-24 flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col gap-5"> 
+          <div
+            className="text-2xl flex flex-col gap-4 mt-60"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            MENU
+          </div>
           <ReservationButton />
         </div>
 
-        <div className="bg-[#1a1a1a] border-[#cda36b] border p-10 py-20 mt-10 flex flex-col items-center gap-3">
-          <Image src={logo} alt="logo" height={250} width={250} className="mt-20" />
+        <div className="bg-[#1a1a1a] border-[#cda36b] border p-12 py-32 mt-10 flex flex-col items-center gap-3">
+          <Image
+            src={logo}
+            alt="logo"
+            height={300}
+            width={300}
+            className="mt-20"
+          />
           <div
             className="mt-20 border-t border-b border-gray-300 w-40 text-center px-4 py-2 inline-block font-light"
             style={{ fontFamily: "var(--font-body)" }}

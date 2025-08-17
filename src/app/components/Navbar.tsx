@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0] sticky top-0 z-30">
-      <div className="max-w-7xl mx-auto flex items-center justify-between p-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
         <div
           className="flex items-center gap-3 cursor-pointer"
           onClick={handleClickLogo}
@@ -60,7 +60,7 @@ export default function Navbar() {
           ))}
           <a
             href="#reserve"
-            className="bg-white text-black px-4 py-1 font-bold hover:bg-gray-200 transition"
+            className="bg-white text-black px-4 py-2 font-bold hover:bg-gray-200 transition"
           >
             Reserveren
           </a>
