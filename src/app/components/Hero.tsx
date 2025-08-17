@@ -11,7 +11,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="flex flex-col sm:flex-row max-w-7xl mx-auto px-6 py-6 md:py-12 justify-between text-xs"
+        className="flex flex-col sm:flex-row max-w-7xl mx-auto px-6 py-6 md:py-12 justify-between"
         style={{ fontFamily: "var(--font-body)" }}
       >
         <div className="space-y-4">
@@ -24,7 +24,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-1 mt-4 md:mt-5 md:text-right text-xs">
+        <div className="flex flex-col space-y-1 mt-4 md:mt-5 md:text-right">
           <p className="font-light">Ma - Zo</p>
           <p className="font-light">12:00 - 20:00</p>
         </div>
