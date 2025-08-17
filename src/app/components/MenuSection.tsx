@@ -4,12 +4,12 @@ import ReservationButton from "./ReservationButton"
 
 export default function MenuSection() {
   return (
-    <section id="menu" className="bg-[#1a1a1a] text-white relative">
+    <section id="menu" className="bg-[#1a1a1a] text-white relative min-h-[30vh]">
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat bg-container"
         style={{
           backgroundImage: "url('/assets/four_seasons_leaf.png')",
-          backgroundSize: "50%",
+          backgroundSize: "100%",
           backgroundPosition: "center bottom",
         }}
       ></div>

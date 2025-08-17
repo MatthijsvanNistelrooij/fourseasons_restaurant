@@ -4,8 +4,6 @@ import React, { useState } from "react"
 import logo from "/public/assets/logo.png"
 import Link from "next/link"
 
-const activePage = "Home"
-
 const links = [
   { label: "Home", href: "#home" },
   { label: "Inside look", href: "#inside" },
@@ -15,24 +13,29 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const handleClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+  const [activePage, setActivePage] = useState("Home")
+
+  const handleClickLogo = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    setIsOpen(false)
+    setActivePage("Home")
+  }
+
+  const handleLinkClick = (label: string) => {
+    setActivePage(label)
     setIsOpen(false)
   }
 
   return (
     <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0] sticky top-0 z-30">
-      <div className="max-w-6xl mx-auto flex items-center justify-between p-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between p-5">
         <div
           className="flex items-center gap-3 cursor-pointer"
-          onClick={handleClick}
+          onClick={handleClickLogo}
         >
           <Image src={logo} alt="logo" height={20} width={20} />
           <span
-            className="-ml-3 tracking-wide text-[#cda36b]"
+            className="-ml-3 text-xl tracking-wide text-[#cda36b]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             FOUR SEASONS
@@ -47,8 +50,9 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={() => handleLinkClick(link.label)}
               className={`hover:text-[#f0f0f0] transition ${
-                activePage === link.label ? "font-bold" : "font-normal"
+                activePage === link.label ? "font-extrabold" : "font-normal"
               }`}
             >
               {link.label}
@@ -56,13 +60,12 @@ export default function Navbar() {
           ))}
           <a
             href="#reserve"
-            className="bg-white text-black px-4 py-2 rounded font-medium hover:bg-gray-200 transition"
+            className="bg-white text-black px-4 py-1 font-bold hover:bg-gray-200 transition"
           >
             Reserveren
           </a>
         </nav>
 
-        {/* Mobile Hamburger */}
         <button
           className="md:hidden flex flex-col gap-[3px] focus:outline-none"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -73,7 +76,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
       {isOpen && (
         <div
           className="md:hidden absolute top-full left-0 w-full bg-[#1a1a1a] border-t border-[#f0f0f0] flex flex-col items-start p-4 gap-3"
@@ -83,10 +85,10 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={() => handleLinkClick(link.label)}
               className={`hover:text-[#f0f0f0] transition ${
                 activePage === link.label ? "font-bold" : "font-normal"
               }`}
-              onClick={() => setIsOpen(false)}
             >
               {link.label}
             </a>

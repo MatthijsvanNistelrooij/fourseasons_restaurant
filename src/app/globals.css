@@ -26,14 +26,6 @@ body {
 }
 
 
-@media (max-width: 768px) {
-  #menu div[style*="backgroundImage"] {
-    background-size: 100% !important; /* kleiner op tablet/mobiel */
-  }
-}
-
-@media (max-width: 480px) {
-  #menu div[style*="backgroundImage"] {
-    background-size: 120% !important; /* nog kleiner op mobiel */
-  }
-}
+/* * {
+ outline: 2px solid red;
+} */
