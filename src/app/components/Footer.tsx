@@ -40,11 +40,11 @@ const Footer = () => {
           >
             <div className="space-y-4">
               <div className="pb-2 border-b border-[#f0f0f0] w-48 sm:w-72 md:w-96">
-                <p className="font-extralight">Enjoy with us</p>
-                <p className="font-extralight">Reitemakersrijge 3, Groningen</p>
+                <p className="font-light">Enjoy with us</p>
+                <p className="font-light">Reitemakersrijge 3, Groningen</p>
               </div>
               <div className="pb-2 border-b border-[#f0f0f0] w-48 sm:w-72 md:w-96">
-                <p className="font-extralight">+31 6 17 28 490</p>
+                <p className="font-light">+31 6 17 28 490</p>
               </div>
             </div>
             <button className="bg-white text-[#1a1a1a] px-4 py-2 font-bold">
@@ -56,7 +56,7 @@ const Footer = () => {
         <div className="md:ml-56">
           <h3 className="font-bold text-lg mb-4">Openingstijden</h3>
           <ul
-            className="space-y-2 font-extralight text-xl"
+            className="space-y-2 font-light text-xl"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <li className="flex justify-left">
@@ -92,7 +92,7 @@ const Footer = () => {
       </div>
       <p
         style={{ fontFamily: "var(--font-body)" }}
-        className="text-xl font-extralight flex justify-center text-center mt-10 mb-40"
+        className="text-xl font-light flex justify-center text-center mt-10 mb-40"
       >
         Copyright © 2025 Restaurant Four Seasons All rights reserved.
       </p>
