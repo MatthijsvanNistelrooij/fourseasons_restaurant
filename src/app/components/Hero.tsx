@@ -16,17 +16,17 @@ export default function Hero() {
       >
         <div className="space-y-4">
           <div className="pb-2 border-b border-[#f0f0f0] w-64 sm:w-56 md:w-64">
-            <p className="font-extralight">Enjoy with us</p>
-            <p className="font-extralight">Reitemakersrijge 3, Groningen</p>
+            <p className="font-light">Enjoy with us</p>
+            <p className="font-light">Reitemakersrijge 3, Groningen</p>
           </div>
           <div className="pb-2 border-b border-[#f0f0f0] w-64 sm:w-56 md:w-64">
-            <p className="font-extralight">+31 6 17 28 490</p>
+            <p className="font-light">+31 6 17 28 490</p>
           </div>
         </div>
 
         <div className="flex flex-col space-y-1 mt-4 md:mt-5 md:text-right">
-          <p className="font-extralight">Ma - Zo</p>
-          <p className="font-extralight">12:00 - 20:00</p>
+          <p className="font-light">Ma - Zo</p>
+          <p className="font-light">12:00 - 20:00</p>
         </div>
       </div>
     </section>
