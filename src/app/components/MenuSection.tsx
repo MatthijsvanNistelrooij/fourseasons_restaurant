@@ -7,7 +7,7 @@ export default function MenuSection() {
   return (
     <section
       id="menu"
-      className="relative text-white mb-30 flex items-center justify-center overflow-hidden"
+      className="relative text-white mb-30 -mt-20 md:mt-0 flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
@@ -19,7 +19,7 @@ export default function MenuSection() {
         />
       </div>
 
-      <div className="relative w-full max-w-2xl mx-auto px-4 py-24 flex flex-col md:flex-row justify-between gap-12">
+      <div className="relative w-full max-w-2xl mx-auto px-4 md:py-24 flex flex-col md:flex-row justify-between gap-12">
         <div
           className="flex flex-col gap-4 mt-40"
           style={{ fontFamily: "var(--font-display)" }}
