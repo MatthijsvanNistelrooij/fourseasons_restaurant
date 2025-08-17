@@ -29,7 +29,7 @@ export default function MenuSection() {
         </div>
 
         <div className="bg-[#1a1a1a] border-[#cda36b] border p-10 py-20 flex flex-col items-center gap-3">
-          <Image src={logo} alt="logo" height={200} width={200} />
+          <Image src={logo} alt="logo" height={250} width={250} className="mt-20" />
           <div
             className="mt-20 border-t-[0.5px] border-b-[0.5px] border-[#f0f0f0] px-6 py-3 inline-block font-light"
             style={{ fontFamily: "var(--font-body)" }}

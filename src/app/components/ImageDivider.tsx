@@ -14,7 +14,7 @@ const ImageDivider = ({ image }: ImageDividerProps) => {
         alt="hero"
         className="h-auto object-contain"
         width={1920}
-        height={500}
+        height={800}
         priority
       />
     </div>
