@@ -95,7 +95,8 @@ const Footer = () => {
           style={{ fontFamily: "var(--font-body)" }}
           className="text-xs text-gray-300 font-light flex justify-center w-64 md:w-full text-center mt-10 mb-10"
         >
-          Copyright © 2025 Restaurant Four Seasons All rights reserved.
+          Copyright © 2025 Restaurant Four Seasons. <br />
+          All rights reserved.
         </p>
       </div>
     </footer>
