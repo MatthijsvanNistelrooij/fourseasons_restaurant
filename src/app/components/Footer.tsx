@@ -19,7 +19,7 @@ const Footer = () => {
       id="contact"
       className="bg-[#1a1a1a] text-white border-[#f0f0f0] font-body"
     >
-      <div className="flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 md:py-20 mt-10 flex justify-between">
+      <div className="flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 md:py-24 mt-10 flex justify-between">
         <div className="flex flex-col gap-6">
           <div
             className="flex items-center cursor-pointer"

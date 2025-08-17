@@ -7,7 +7,7 @@ export default function MenuSection() {
   return (
     <section
       id="menu"
-      className="relative text-white mb-30 min-h-[10vh] flex items-center justify-center overflow-hidden"
+      className="relative text-white md:py-20 mb-30 min-h-[10vh] flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <Image
