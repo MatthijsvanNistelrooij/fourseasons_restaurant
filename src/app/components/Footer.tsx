@@ -39,11 +39,11 @@ const Footer = () => {
             style={{ fontFamily: "var(--font-body)" }}
           >
             <div className="space-y-4">
-              <div className="pb-2 border-b border-[#f0f0f0] w-48 sm:w-72 md:w-96">
+              <div className="pb-2 border-b border-[#f0f0f0] w-80 sm:w-72 md:w-96">
                 <p className="font-light">Enjoy with us</p>
                 <p className="font-light">Reitemakersrijge 3, Groningen</p>
               </div>
-              <div className="pb-2 border-b border-[#f0f0f0] w-48 sm:w-72 md:w-96">
+              <div className="pb-2 border-b border-[#f0f0f0] w-80 sm:w-72 md:w-96">
                 <p className="font-light">+31 6 17 28 490</p>
               </div>
             </div>
