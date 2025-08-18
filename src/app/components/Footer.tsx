@@ -26,7 +26,7 @@ const Footer = () => {
             className="flex items-center cursor-pointer"
             onClick={handleClick}
           >
-            <Image src={logo} alt="logo" className="h-5 w-5 md:h-15 md:w-12" />
+            <Image src={logo} alt="logo" className="h-8 w-7 md:h-15 md:w-12" />
             <span
               className="tracking-wide text-[#cda36b] text-2xl md:text-5xl select-none"
               style={{ fontFamily: "var(--font-display)" }}
