@@ -11,7 +11,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="max-w-[1500px] flex flex-col mt-10 text-sm md:text-lg sm:flex-row mx-auto px-4 py-6 md:py-12 justify-between"
+        className="max-w-[1500px] flex flex-col mt-10 md:text-lg sm:flex-row mx-auto px-4 py-6 md:py-12 justify-between"
         style={{ fontFamily: "var(--font-body)" }}
       >
         <div className="space-y-4">
