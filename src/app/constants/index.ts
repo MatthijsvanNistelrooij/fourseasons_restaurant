@@ -6,7 +6,7 @@ export const bunker = "#1a1a1a"
 
 
 export const mockMenu = [
-  { id: 1, name: "1. Margherita Pizza", price: "€9.50" },
+  { id: 1, name: "1. Pizza Margherita", price: "€9.50" },
   { id: 2, name: "2. Spaghetti Carbonara", price: "€12.00" },
   { id: 3, name: "3. Caesar Salad", price: "€8.00" },
   { id: 4, name: "4. Lasagna Bolognese", price: "€13.50" },
