@@ -2,7 +2,7 @@ import React from "react"
 
 const InsideLook = () => {
   return (
-    <div id="inside" className="x-4 pt-10 md:py-24 max-w-5xl mx-auto text-center">
+    <div id="inside" className="px-4 pt-10 md:py-24 max-w-5xl mx-auto text-center">
       <div className="mx-auto text-center">
         <h1
           className="text-2xl -tracking-tight mb-4 mt-10"
