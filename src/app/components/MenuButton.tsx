@@ -38,7 +38,7 @@ const MenuButton = () => {
           </DialogTitle>
         </DialogHeader>
         <div
-          className="space-y-4 p-8"
+          className="space-y-4 p-5"
           style={{ fontFamily: "var(--font-body)" }}
         >
           <ul>
