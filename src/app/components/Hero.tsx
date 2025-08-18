@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="bg-[#1a1a1a] text-[#f0f0f0]">
+    <section className="bg-[#1a1a1a] text-gray-200">
       <div id="home" className="max-w-7xl mx-auto px-4 pt-10 md:pt-20">
         <h1
           className="text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[9.5rem] leading-none"
@@ -15,11 +15,11 @@ export default function Hero() {
         style={{ fontFamily: "var(--font-body)" }}
       >
         <div className="space-y-4">
-          <div className="pb-2 border-b font-light border-[#f0f0f0] w-64 sm:w-56 md:w-64">
+          <div className="pb-2 border-b font-light border-gray-200 w-64 sm:w-56 md:w-64">
             <p>Enjoy with us</p>
             <p>Reitemakersrijge 3, Groningen</p>
           </div>
-          <div className="pb-2 border-b font-light border-[#f0f0f0] w-64 sm:w-56 md:w-64">
+          <div className="pb-2 border-b font-light border-gray-200 w-64 sm:w-56 md:w-64">
             <p>+31 6 17 28 490</p>
           </div>
         </div>
