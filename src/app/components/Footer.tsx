@@ -18,9 +18,9 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="bg-[#1a1a1a] text-white border-[#f0f0f0] font-body"
+      className="bg-[#1a1a1a] text-white border-[#f0f0f0] font-body scroll-mt-20"
     >
-      <div className="flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 py-20 md:py-20 mt-10 flex justify-between">
+      <div className="flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 md:py-20 mt-10 flex justify-between">
         <div className="flex flex-col gap-2">
           <div
             className="flex items-center cursor-pointer"
@@ -53,7 +53,9 @@ const Footer = () => {
         </div>
 
         <div className="w-1/3">
-          <h3 className="font-bold text-2xl md:text-2xl mb-4 md:mb-7">Openingstijden</h3>
+          <h3 className="font-bold text-2xl md:text-2xl mb-4 md:mb-7">
+            Openingstijden
+          </h3>
           <ul
             className="space-y-1 font-light text-lg md:text-2xl min-w-48 md:min-w-0"
             style={{ fontFamily: "var(--font-body)" }}
