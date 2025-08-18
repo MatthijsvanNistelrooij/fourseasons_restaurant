@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0] sticky top-0 z-30">
-      <div className="max-w-[1500px] mx-auto flex items-center justify-between px-4 py-4">
+      <div className="max-w-[1500px] mx-auto flex items-center justify-between px-4 py-5">
         <div
           className="flex items-center gap-3 cursor-pointer"
           onClick={handleClickLogo}
