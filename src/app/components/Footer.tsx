@@ -2,6 +2,7 @@
 import Image from "next/image"
 import React, { useState } from "react"
 import logo from "/public/assets/logo.png"
+import ReservationButton from "./ReservationButton"
 
 const Footer = () => {
   const [, setIsOpen] = useState(false)
@@ -47,12 +48,7 @@ const Footer = () => {
                 <p className="font-light">+31 6 17 28 490</p>
               </div>
             </div>
-            <a
-              href="#reserve"
-              className="bg-[#f0f0f0] text-black text-md px-4 py-2 font-bold hover:bg-gray-200 transition"
-            >
-              Reserveren
-            </a>
+            <ReservationButton fontSize={"text-xl"} />
           </div>
         </div>
 
@@ -93,10 +89,10 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center py-20">
         <p
           style={{ fontFamily: "var(--font-body)" }}
-          className="mb-20 text-sm text-[#f0f0f0] font-extralight flex justify-center text-center p-5"
+          className="text-sm text-[#f0f0f0] font-extralight flex justify-center text-center p-5"
         >
           Copyright © 2025 Restaurant Four Seasons. All rights reserved.
         </p>

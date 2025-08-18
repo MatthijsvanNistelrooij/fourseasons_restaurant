@@ -3,6 +3,14 @@ import Image from "next/image"
 import React, { useState } from "react"
 import logo from "/public/assets/logo.png"
 import Link from "next/link"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ReservationButton from "./ReservationButton"
 
 const links = [
   { label: "Home", href: "/" },
@@ -21,9 +29,18 @@ export default function Navbar() {
     setActivePage("Home")
   }
 
-  const handleLinkClick = (label: string) => {
+  const handleLinkClick = (label: string, href: string) => {
     setActivePage(label)
     setIsOpen(false)
+
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    } else if (href === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
   }
 
   return (
@@ -47,23 +64,18 @@ export default function Navbar() {
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
-            <Link
+            <button
               key={link.href}
-              href={link.href}
-              onClick={() => handleLinkClick(link.label)}
-              className={`hover:text-[#f0f0f0] transition ${
+              onClick={() => handleLinkClick(link.label, link.href)}
+              className={`hover:text-[#f0f0f0] transition cursor-pointer ${
                 activePage === link.label ? "font-extrabold" : "font-normal"
               }`}
             >
               {link.label}
-            </Link>
+            </button>
           ))}
-          <a
-            href="#reserve"
-            className="bg-white text-black px-4 py-2 font-bold hover:bg-gray-200 transition"
-          >
-            Reserveren
-          </a>
+
+          <ReservationButton fontSize={"text-md" } />
         </nav>
 
         <button
@@ -82,20 +94,20 @@ export default function Navbar() {
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
-              onClick={() => handleLinkClick(link.label)}
+              onClick={() => handleLinkClick(link.label, link.href)}
               className={`hover:text-[#f0f0f0] transition ${
-                activePage === link.label ? "font-bold" : "font-normal"
+                activePage === link.label ? "font-extrabold" : "font-normal"
               }`}
             >
               {link.label}
-            </a>
+            </button>
           ))}
+
           <a
             href="#reserve"
-            className="bg-white text-black font-bold px-4 py-2 rounded hover:bg-gray-200 transition"
+            className="bg-white text-black font-bold px-4 py-2 rounded hover:bg-gray-200 transition cursor-pointer"
             onClick={() => setIsOpen(false)}
           >
             Reserveren

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import logo from "/public/FS_logo_Vertical-Light.png"
 import leaf from "/public/assets/four_seasons_leaf.png"
-import ReservationButton from "./ReservationButton"
+import MenuButton from "./MenuButton"
 
 export default function MenuSection() {
   return (
@@ -27,7 +27,7 @@ export default function MenuSection() {
           >
             MENU
           </div>
-          <ReservationButton />
+          <MenuButton />
         </div>
 
         <div className="bg-[#1a1a1a] border-[#cda36b] border p-12 py-32 mt-10 flex flex-col items-center gap-3">

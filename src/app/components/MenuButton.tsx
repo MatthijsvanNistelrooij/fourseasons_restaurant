@@ -9,20 +9,17 @@ import {
 } from "@/components/ui/dialog"
 import Image from "next/image"
 import logo from "/public/assets/logo.png"
+import { mockMenu } from "../constants"
 
-type BtnProps = {
-  fontSize: string
-}
-
-const ReservationButton = ({ fontSize }: BtnProps) => {
+const MenuButton = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button
-          className={`bg-[#f0f0f0] text-[#1a1a1a] ${fontSize} px-6 py-2 font-bold hover:bg-gray-200 transition cursor-pointer`}
+          className="bg-[#f0f0f0] text-2xl text-black px-4 py-4 w-48 font-bold hover:bg-gray-200 transition cursor-pointer"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Reserveren
+          Bekijk Menu
         </button>
       </DialogTrigger>
       <DialogContent className="border border-[#cda36b]">
@@ -36,26 +33,26 @@ const ReservationButton = ({ fontSize }: BtnProps) => {
               >
                 FOUR SEASONS
               </span>
-              Reserveren
+              Menu
             </div>
           </DialogTitle>
         </DialogHeader>
-        <div className="space-y-4">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-            <ul>
-              <li>.1</li>
-              <li>.2</li>
-              <li>.3</li>
-              <li>.4</li>
-              <li>.5</li>
-              <li>.6</li>
-              <li>.7</li>
-            </ul>
-          </div>
+        <div className="space-y-4 p-8" style={{ fontFamily: "var(--font-body)" }}>
+          <ul>
+            {mockMenu.map((item) => (
+              <li
+                key={item.id}
+                className="flex justify-between border-b border-gray-200 pb-2 text-[#f0f0f0] font-lights"
+              >
+                <span>{item.name}</span>
+                <span className="font-light">{item.price}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </DialogContent>
     </Dialog>
   )
 }
 
-export default ReservationButton
+export default MenuButton
