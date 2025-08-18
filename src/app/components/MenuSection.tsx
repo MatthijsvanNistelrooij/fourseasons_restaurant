@@ -19,10 +19,10 @@ export default function MenuSection() {
         />
       </div>
 
-      <div className="relative w-full max-w-4xl mx-auto px-4 md:py-32 flex flex-col md:flex-row justify-center md:gap-70">
+      <div className="relative w-full max-w-5xl mx-auto px-4 md:py-32 flex flex-col md:flex-row justify-between md:gap-20">
         <div className="flex flex-col gap-5">
           <div
-            className="text-2xl flex flex-col gap-4 mt-20 md:mt-64"
+            className="text-2xl md:text-3xl flex flex-col gap-4 mt-20 md:mt-64"
             style={{ fontFamily: "var(--font-display)" }}
           >
             MENU
@@ -30,12 +30,12 @@ export default function MenuSection() {
           <MenuButton />
         </div>
 
-        <div className="bg-[#1a1a1a] border-[#cda36b] border p-12 py-32 mt-10 flex flex-col items-center gap-3">
+        <div className="bg-[#1a1a1a] border-[#cda36b] border p-12 py-32 px-24 mt-10 flex flex-col items-center gap-3">
           <Image
             src={logo}
             alt="logo"
-            height={300}
-            width={300}
+            height={330}
+            width={330}
             className="mt-20"
           />
           <div

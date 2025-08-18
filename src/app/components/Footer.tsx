@@ -26,9 +26,9 @@ const Footer = () => {
             className="flex items-center cursor-pointer"
             onClick={handleClick}
           >
-            <Image src={logo} alt="logo" className="h-5 w-5 md:h-10 md:w-10" />
+            <Image src={logo} alt="logo" className="h-5 w-5 md:h-15 md:w-12" />
             <span
-              className="tracking-wide text-[#cda36b] text-2xl md:text-4xl select-none"
+              className="tracking-wide text-[#cda36b] text-2xl md:text-5xl select-none"
               style={{ fontFamily: "var(--font-display)" }}
             >
               FOUR SEASONS
@@ -36,15 +36,15 @@ const Footer = () => {
           </div>
 
           <div
-            className="font-light space-y-6 text-md md:text-2xl mt-5"
+            className="font-light space-y-6 text-md md:text-3xl mt-5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            <div className="space-y-6">
-              <div className="pb-2 border-b text-gray-300 border-[#f0f0f0] w-60 md:w-92 mt-2 space-y-2">
+            <div className="space-y-10">
+              <div className="pb-2 border-b text-gray-300 border-[#f0f0f0] w-60 md:w-110 mt-8 space-y-2">
                 <p className="font-light">Enjoy with us</p>
                 <p className="font-light">Reitemakersrijge 3, Groningen</p>
               </div>
-              <div className="pb-2 border-b border-[#f0f0f0] w-60 md:w-92">
+              <div className="pb-2 border-b border-[#f0f0f0] w-60 md:w-110">
                 <p className="font-light">+31 6 17 28 490</p>
               </div>
             </div>
@@ -53,11 +53,11 @@ const Footer = () => {
         </div>
 
         <div className="w-1/3">
-          <h3 className="font-bold text-2xl md:text-2xl mb-4 md:mb-7">
+          <h3 className="font-bold text-2xl md:text-3xl mb-4 md:mb-9">
             Openingstijden
           </h3>
           <ul
-            className="space-y-1 font-light text-lg md:text-2xl min-w-48 md:min-w-0"
+            className="space-y-1 md:space-y-2 font-light text-lg md:text-3xl min-w-48 md:min-w-0"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <li className="flex justify-left">
@@ -94,7 +94,7 @@ const Footer = () => {
       <div className="flex justify-center py-20">
         <p
           style={{ fontFamily: "var(--font-body)" }}
-          className="text-sm text-[#f0f0f0] font-extralight flex justify-center text-center p-5"
+          className="text-sm md:text-lg text-[#f0f0f0] font-extralight flex justify-center text-center p-5"
         >
           Copyright © 2025 Restaurant Four Seasons. All rights reserved.
         </p>
