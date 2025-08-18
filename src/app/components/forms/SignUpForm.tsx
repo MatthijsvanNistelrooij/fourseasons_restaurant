@@ -1,14 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useState } from "react"
+// import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useAuth } from "@/context/AuthContext"
+// import { useAuth } from "@/context/AuthContext"
 import Image from "next/image"
 import logo from "/public/logo.png"
 
-import { account } from "@/appwrite"
-import { ID, Models } from "node-appwrite"
+// import { account } from "@/appwrite"
+// import { ID, Models } from "node-appwrite"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -16,30 +16,30 @@ export default function SignUpForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const router = useRouter()
-  const { user, setUser } = useAuth()
+  // const router = useRouter()
+  // const { user, setUser } = useAuth()
 
-  useEffect(() => {
-    if (user) router.push("/")
-  }, [user, router])
+  // useEffect(() => {
+  //   if (user) router.push("/")
+  // }, [user, router])
 
-  const handleSignUp = async (e: React.FormEvent) => {
-    e.preventDefault()
+  // const handleSignUp = async (e: React.FormEvent) => {
+  //   e.preventDefault()
 
-    try {
-      await account.create(ID.unique(), email, password, name)
+  //   try {
+  //     await account.create(ID.unique(), email, password, name)
 
-      await account.createEmailPasswordSession(email, password)
+  //     await account.createEmailPasswordSession(email, password)
 
-      const appwriteUser: Models.User<Models.Preferences> = await account.get()
-      setUser(appwriteUser)
+  //     const appwriteUser: Models.User<Models.Preferences> = await account.get()
+  //     setUser(appwriteUser)
 
-      router.push("/")
-    } catch (error) {
-      console.error("Signup error:", error)
-      alert("Failed to register: " + (error as Error).message)
-    }
-  }
+  //     router.push("/")
+  //   } catch (error) {
+  //     console.error("Signup error:", error)
+  //     alert("Failed to register: " + (error as Error).message)
+  //   }
+  // }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -63,7 +63,7 @@ export default function SignUpForm() {
 
       <div className="md:flex-1 flex items-center justify-center p-8 bg-white">
         <form
-          onSubmit={handleSignUp}
+          // onSubmit={handleSignUp}
           className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md"
         >
           <h2 className="text-2xl text-center font-semibold text-gray-900">
