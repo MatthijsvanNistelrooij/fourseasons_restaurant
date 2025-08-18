@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         <div className="w-1/3">
-          <h3 className="font-bold text-2xl md:text-3xl mb-4 md:mb-9">
+          <h3 className="font-bold text-xl md:text-3xl mb-4 md:mb-9">
             Openingstijden
           </h3>
           <ul
