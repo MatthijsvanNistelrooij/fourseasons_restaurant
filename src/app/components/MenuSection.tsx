@@ -30,7 +30,7 @@ export default function MenuSection() {
           <MenuButton />
         </div>
 
-        <div className="bg-[#1a1a1a] border-[#cda36b] border p-12 py-32 px-24 mt-10 flex flex-col items-center gap-3">
+        <div className="bg-[#1a1a1a] border-[#cda36b] border p-12 py-32 px-18 mt-10 flex flex-col items-center gap-3">
           <Image
             src={logo}
             alt="logo"
