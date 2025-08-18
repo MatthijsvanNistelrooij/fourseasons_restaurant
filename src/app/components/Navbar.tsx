@@ -2,14 +2,6 @@
 import Image from "next/image"
 import React, { useState } from "react"
 import logo from "/public/assets/logo.png"
-import Link from "next/link"
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
 import ReservationButton from "./ReservationButton"
 
 const links = [
