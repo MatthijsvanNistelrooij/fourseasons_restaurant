@@ -45,10 +45,11 @@ const MenuButton = () => {
             {mockMenu.map((item) => (
               <li
                 key={item.id}
-                className="flex justify-between border-b border-gray-500 pt-2 text-[#f0f0f0] font-lights"
+                className="flex justify-between border-b 
+                    border-gray-500 pt-2 text-[#f0f0f0] tracking-wider"
               >
                 <span>{item.name}</span>
-                <span className="font-light">{item.price}</span>
+                <span className="font-extralight text-xl">{item.price}</span>
               </li>
             ))}
           </ul>

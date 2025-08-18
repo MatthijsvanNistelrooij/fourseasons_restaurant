@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
 
           <div
-            className="font-light space-y-8 text-md md:text-2xl mt-5"
+            className="font-light space-y-6 text-md md:text-2xl mt-5"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <div className="space-y-6">
