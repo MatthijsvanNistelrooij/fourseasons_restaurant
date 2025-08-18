@@ -28,7 +28,7 @@ const Footer = () => {
           >
             <Image src={logo} alt="logo" className="h-5 w-5 md:h-10 md:w-10" />
             <span
-              className="tracking-wide text-[#cda36b] text-2xl md:text-4xl"
+              className="tracking-wide text-[#cda36b] text-2xl md:text-4xl select-none"
               style={{ fontFamily: "var(--font-display)" }}
             >
               FOUR SEASONS

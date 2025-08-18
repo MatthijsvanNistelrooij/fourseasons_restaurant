@@ -44,7 +44,7 @@ export default function Navbar() {
         >
           <Image src={logo} alt="logo" height={20} width={20} />
           <span
-            className="-ml-3 text-xl tracking-wide text-[#cda36b]"
+            className="-ml-3 text-xl tracking-wide text-[#cda36b] select-none"
             style={{ fontFamily: "var(--font-display)" }}
           >
             FOUR SEASONS
