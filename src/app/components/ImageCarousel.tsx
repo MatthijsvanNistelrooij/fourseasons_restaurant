@@ -10,19 +10,21 @@ const ImageCarousel = () => {
   const images = [img1, img2, img3, img4, img5]
 
   return (
-    <div className="w-full flex justify-center items-start space-x-4 md:space-x-20">
-      {images.map((img, index) => (
-        <div key={index} className="" style={{ marginTop: `${index * 4}%` }}>
-          <Image
-            src={img}
-            alt={`hero-${index}`}
-            className="h-auto object-contain"
-            width={400}
-            height={100}
-            priority
-          />
-        </div>
-      ))}
+    <div className="w-full flex justify-center items-start">
+      <div className="flex space-x-4 md:space-x-20">
+        {images.map((img, index) => (
+          <div key={index} style={{ marginTop: `${index * 4}%` }}>
+            <Image
+              src={img}
+              alt={`hero-${index}`}
+              className="h-auto object-contain"
+              width={400}
+              height={100}
+              priority
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
