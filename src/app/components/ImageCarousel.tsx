@@ -18,7 +18,7 @@ const ImageCarousel = () => {
               src={img}
               alt={`hero-${index}`}
               className="h-auto object-contain"
-              width={285}
+              width={320}
               height={100}
               priority
             />

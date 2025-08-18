@@ -12,7 +12,7 @@ const ImageSection = ({ image }: ImageDividerProps) => {
       <Image
         src={image}
         alt="hero"
-        className="h-auto object-contain xl:px-20"
+        className="h-auto object-contain"
         width={1920}
         height={800}
         priority
