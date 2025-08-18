@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
 
         <nav
-          className="hidden lg:flex items-center gap-16"
+          className="hidden lg:flex items-center gap-14"
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
