@@ -20,7 +20,7 @@ export default function MenuSection() {
       </div>
 
       <div className="relative w-full max-w-5xl mx-auto px-4 md:py-32 flex flex-col md:flex-row justify-between md:gap-20">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6 md:gap-8">
           <div
             className="text-2xl md:text-3xl flex flex-col gap-4 mt-20 md:mt-64"
             style={{ fontFamily: "var(--font-display)" }}
