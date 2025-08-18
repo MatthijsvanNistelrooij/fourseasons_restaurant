@@ -20,7 +20,7 @@ export default function SignUpForm() {
   const { user, setUser } = useAuth()
 
   useEffect(() => {
-    if (user) router.push("/appointments")
+    if (user) router.push("/")
   }, [user, router])
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -34,7 +34,7 @@ export default function SignUpForm() {
       const appwriteUser: Models.User<Models.Preferences> = await account.get()
       setUser(appwriteUser)
 
-      router.push("/appointments")
+      router.push("/")
     } catch (error) {
       console.error("Signup error:", error)
       alert("Failed to register: " + (error as Error).message)

@@ -19,7 +19,7 @@ export default function SignInForm() {
   const { user, setUser } = useAuth()
 
   useEffect(() => {
-    if (user) router.push("/appointments")
+    if (user) router.push("/")
   }, [user, router])
 
   const handleSignIn = async (e: React.FormEvent) => {
@@ -31,7 +31,7 @@ export default function SignInForm() {
       const sessionUser: Models.User<Models.Preferences> = await account.get()
       setUser(sessionUser)
 
-      router.push("/appointments")
+      router.push("/")
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       alert("Sign-in failed: " + err.message)
