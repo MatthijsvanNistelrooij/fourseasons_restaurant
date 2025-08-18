@@ -10,15 +10,3 @@ const databases = new Databases(client)
 
 export { client, databases, account }
 
-export const getAllAppointments = async () => {
-  try {
-    const response = await databases.listDocuments(
-      appwriteConfig.databaseId,
-      appwriteConfig.appointmentsCollectionId
-    )
-    return response.documents
-  } catch (error) {
-    console.error("Failed to fetch appointments:", error)
-    return []
-  }
-}
