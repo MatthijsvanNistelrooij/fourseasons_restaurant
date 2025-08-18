@@ -41,7 +41,7 @@ const ReservationButton = ({ fontSize }: BtnProps) => {
           </DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+          <div className="mx-auto flex items-center justify-between px-4 py-4">
             <ul>
               <li>.1</li>
               <li>.2</li>
