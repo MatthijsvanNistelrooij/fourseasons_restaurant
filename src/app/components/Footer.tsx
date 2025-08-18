@@ -26,9 +26,9 @@ const Footer = () => {
             className="flex items-center cursor-pointer"
             onClick={handleClick}
           >
-            <Image src={logo} alt="logo" height={40} width={40} />
+            <Image src={logo} alt="logo" className="h-5 w-5 md:h-10 md:w-10" />
             <span
-              className="tracking-wide text-[#cda36b] text-4xl"
+              className="tracking-wide text-[#cda36b] text-2xl md:text-4xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               FOUR SEASONS
