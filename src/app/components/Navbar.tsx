@@ -75,7 +75,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          <ReservationButton fontSize={"text-md" } />
+          <ReservationButton fontSize={"text-md"} />
         </nav>
 
         <button
@@ -105,13 +105,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          <a
-            href="#reserve"
-            className="bg-white text-black font-bold px-4 py-2 rounded hover:bg-gray-200 transition cursor-pointer"
-            onClick={() => setIsOpen(false)}
-          >
-            Reserveren
-          </a>
+          <ReservationButton fontSize={"text-md"} />
         </div>
       )}
     </header>
