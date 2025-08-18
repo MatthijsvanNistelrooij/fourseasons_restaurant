@@ -11,14 +11,14 @@ const ImageCarousel = () => {
 
   return (
     <div className="w-full flex justify-center items-start">
-      <div className="flex space-x-6 md:space-x-12">
+      <div className="flex space-x-6 md:space-x-20">
         {images.map((img, index) => (
           <div key={index} style={{ marginTop: `${index * 4}%` }}>
             <Image
               src={img}
               alt={`hero-${index}`}
               className="h-auto object-contain"
-              width={280}
+              width={255}
               height={100}
               priority
             />
