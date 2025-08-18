@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog"
 import Image from "next/image"
 import logo from "/public/assets/logo.png"
-import { mockMenu } from "../constants"
+import { mockMenu } from "../../constants"
 
 const MenuButton = () => {
   return (

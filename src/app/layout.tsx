@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Lato } from "next/font/google"
 import "./globals.css"
+import { AuthProvider } from "@/context/AuthContext"
+import { Toaster } from "sonner"
 
 const playfair = Playfair_Display({
   variable: "--font-display",
@@ -27,7 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} antialiased`}>
-        {children}
+        <AuthProvider>
+          {children}
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   )
