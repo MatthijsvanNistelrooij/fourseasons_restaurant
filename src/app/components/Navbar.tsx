@@ -97,7 +97,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          <ReservationButton fontSize={"text-md"} />
+          <ReservationButton fontSize={"text-[1rem] md:text-[1rem] py-2"} />
         </div>
       )}
     </header>
