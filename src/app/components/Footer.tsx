@@ -39,7 +39,7 @@ const Footer = () => {
             className="font-light space-y-6 text-md md:text-3xl mt-5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            <div className="space-y-10">
+            <div className="space-y-12 md:mb-8">
               <div className="pb-2 border-b text-gray-300 border-[#f0f0f0] w-60 md:w-110 md:mt-8 space-y-2">
                 <p className="font-light">Enjoy with us</p>
                 <p className="font-light">Reitemakersrijge 3, Groningen</p>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <p className="font-light">+31 6 17 28 490</p>
               </div>
             </div>
-            <ReservationButton fontSize={"text-xl"} />
+            <ReservationButton fontSize={"text-[1rem] md:text-[1.6rem] py-3.5"} />
           </div>
         </div>
 
