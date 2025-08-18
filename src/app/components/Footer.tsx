@@ -48,7 +48,7 @@ const Footer = () => {
                 <p className="font-light">+31 6 17 28 490</p>
               </div>
             </div>
-            <ReservationButton fontSize={"text-[1rem] md:text-[1.6rem] py-2 md:py-3.5"} />
+            <ReservationButton fontSize={"text-[1rem] md:text-[1.6rem] py-2 md:py-3"} />
           </div>
         </div>
 
