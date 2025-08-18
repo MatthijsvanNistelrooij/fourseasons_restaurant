@@ -16,7 +16,7 @@ const MenuButton = () => {
     <Dialog>
       <DialogTrigger asChild>
         <button
-          className="bg-[#f0f0f0] text-black text-[1rem] flex max-w-40 md:text-[1.2rem] px-6 py-3 font-bold hover:bg-gray-200 transition cursor-pointer"
+          className="bg-[#f0f0f0] text-black text-[1.2rem] flex text-center justify-center max-w-36 md:text-[1.4rem] px-2 py-3 font-bold hover:bg-gray-200 transition cursor-pointer"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Bekijk Menu
