@@ -19,7 +19,7 @@ const ReservationButton = ({ fontSize }: BtnProps) => {
     <Dialog>
       <DialogTrigger asChild>
         <button
-          className={`bg-[#f0f0f0] text-[#1a1a1a] ${fontSize} px-6 py-2 font-bold hover:bg-gray-200 transition cursor-pointer`}
+          className={`bg-[#f0f0f0] text-[#1a1a1a] ${fontSize} text-xs md:text-[1rem] px-6 py-2 font-bold hover:bg-gray-200 transition cursor-pointer`}
           style={{ fontFamily: "var(--font-body)" }}
         >
           Reserveren
