@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
 
         <nav
-          className="hidden md:flex items-center gap-10"
+          className="hidden lg:flex items-center gap-16"
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
@@ -71,7 +71,7 @@ export default function Navbar() {
         </nav>
 
         <button
-          className="md:hidden flex flex-col gap-[3px] focus:outline-none cursor-pointer"
+          className="lg:hidden flex flex-col gap-[3px] focus:outline-none cursor-pointer"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <span className="block w-6 h-[2px] bg-white"></span>
@@ -82,14 +82,14 @@ export default function Navbar() {
 
       {isOpen && (
         <div
-          className="md:hidden absolute top-full left-0 w-full bg-[#1a1a1a] border-b border-t border-[#f0f0f0] flex flex-col items-start p-4 gap-5"
+          className="lg:hidden absolute top-full left-0 w-full bg-[#1a1a1a] border-b border-t border-[#f0f0f0] flex flex-col items-start p-4 gap-5"
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
             <button
               key={link.href}
               onClick={() => handleLinkClick(link.label, link.href)}
-              className={`hover:text-[#f0f0f0] transition ${
+              className={`hover:text-[#f0f0f0] transition cursor-pointer ${
                 activePage === link.label ? "font-extrabold" : "font-normal"
               }`}
             >
