@@ -1,6 +1,6 @@
 "use client"
 
-// import { account } from "@/appwrite"
+import { account } from "@/appwrite"
 import { Models } from "node-appwrite"
 import React, {
   createContext,
@@ -10,7 +10,6 @@ import React, {
   ReactNode,
 } from "react"
 
-// Define context value type
 type ContextType = {
   user: Models.User<Models.Preferences> | null
   loading: boolean
@@ -23,23 +22,23 @@ const AuthContext = createContext<ContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null)
-  const [loading] = useState(true)
+  const [loading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   const checkUser = async () => {
-  //     try {
-  //       const appwriteUser = await account.get()
-  //       setUser(appwriteUser)
-  //     } catch (err) {
-  //       console.log("No logged in user:", err)
-  //       setUser(null)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
+  useEffect(() => {
+    const checkUser = async () => {
+      try {
+        const appwriteUser = await account.get()
+        setUser(appwriteUser)
+      } catch (err) {
+        console.log("No logged in user:", err)
+        setUser(null)
+      } finally {
+        setLoading(false)
+      }
+    }
 
-  //   checkUser()
-  // }, [])
+    checkUser()
+  }, [])
 
   return (
     <AuthContext.Provider value={{ user, loading, setUser }}>

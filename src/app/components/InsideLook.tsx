@@ -5,7 +5,7 @@ const InsideLook = () => {
     <div id="inside" className="px-4 pt-10 md:py-24 max-w-7xl mx-auto text-center">
       <div className="mx-auto text-center">
         <h1
-          className="md:text-2xl lg:text-3xl -tracking-tight mt-10"
+          className="md:text-2xl lg:text-3xl -tracking-tight mt-10 text-gray-100"
           style={{
             fontFamily: "Mayfair Display, serif",
             transform: "scaleY(1.2)",

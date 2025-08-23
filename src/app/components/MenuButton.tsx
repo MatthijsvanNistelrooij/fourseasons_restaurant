@@ -46,7 +46,7 @@ const MenuButton = () => {
               <li
                 key={item.id}
                 className="flex justify-between border-b 
-                    border-gray-500 pt-2 text-[#f0f0f0] tracking-wider"
+                    border-gray-500 pt-2 tracking-wider"
               >
                 <span>{item.name}</span>
                 <span className="font-extralight text-xl">{item.price}</span>

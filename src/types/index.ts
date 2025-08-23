@@ -1,12 +1,12 @@
 export interface Reservation {
   $id: string
   name: string
-  service: string
-  date: string
+  slot: string
   email: string
   phone: string
-  time: string
-  barber: string
+  size: number
+  notes?: string
+  status: string
   $createdAt: string
   $updatedAt: string
 }

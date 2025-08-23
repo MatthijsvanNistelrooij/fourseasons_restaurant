@@ -3,40 +3,40 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-// import { account } from "@/appwrite"
+import { account } from "@/appwrite"
 import Image from "next/image"
 import logo from "/public/logo.png"
 
-// import { Models } from "node-appwrite"
+import { Models } from "node-appwrite"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-// import { useAuth } from "@/context/AuthContext"
+import { useAuth } from "@/context/AuthContext"
 
 export default function SignInForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  // const router = useRouter()
-  // const { user, setUser } = useAuth()
+  const router = useRouter()
+  const { user, setUser } = useAuth()
 
-  // useEffect(() => {
-  //   if (user) router.push("/")
-  // }, [user, router])
+  useEffect(() => {
+    if (user) router.push("/reservations")
+  }, [user, router])
 
-  // const handleSignIn = async (e: React.FormEvent) => {
-  //   e.preventDefault()
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault()
 
-  //   try {
-  //     await account.createEmailPasswordSession(email, password)
+    try {
+      await account.createEmailPasswordSession(email, password)
 
-  //     const sessionUser: Models.User<Models.Preferences> = await account.get()
-  //     setUser(sessionUser)
+      const sessionUser: Models.User<Models.Preferences> = await account.get()
+      setUser(sessionUser)
 
-  //     router.push("/")
-  //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  //   } catch (err: any) {
-  //     alert("Sign-in failed: " + err.message)
-  //   }
-  // }
+      router.push("/reservations")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      alert("Sign-in failed: " + err.message)
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -53,14 +53,14 @@ export default function SignInForm() {
           </div>
           <h1 className="text-4xl font-bold">Welcome Back</h1>
           <p className="mt-4 text-[#f0f0f0]">
-            Sign in to manage appointments and more.
+            Sign in to manage reservations and more.
           </p>
         </div>
       </div>
 
       <div className="md:flex-1 flex items-center justify-center p-8 bg-white">
         <form
-          // onSubmit={handleSignIn}
+          onSubmit={handleSignIn}
           className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md"
         >
           <h2 className="text-2xl text-center font-semibold text-gray-900">
@@ -81,6 +81,7 @@ export default function SignInForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
+              className="text-gray-800"
             />
           </div>
 
@@ -97,6 +98,7 @@ export default function SignInForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="text-gray-800"
               placeholder="••••••••"
             />
           </div>

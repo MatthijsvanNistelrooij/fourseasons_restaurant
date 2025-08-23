@@ -1,14 +1,14 @@
 "use client"
 
-import { useState } from "react"
-// import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
-// import { useAuth } from "@/context/AuthContext"
+import { useAuth } from "@/context/AuthContext"
 import Image from "next/image"
 import logo from "/public/logo.png"
 
-// import { account } from "@/appwrite"
-// import { ID, Models } from "node-appwrite"
+import { account } from "@/appwrite"
+import { ID, Models } from "node-appwrite"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -16,30 +16,30 @@ export default function SignUpForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  // const router = useRouter()
-  // const { user, setUser } = useAuth()
+  const router = useRouter()
+  const { user, setUser } = useAuth()
 
-  // useEffect(() => {
-  //   if (user) router.push("/")
-  // }, [user, router])
+  useEffect(() => {
+    if (user) router.push("/reservations")
+  }, [user, router])
 
-  // const handleSignUp = async (e: React.FormEvent) => {
-  //   e.preventDefault()
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault()
 
-  //   try {
-  //     await account.create(ID.unique(), email, password, name)
+    try {
+      await account.create(ID.unique(), email, password, name)
 
-  //     await account.createEmailPasswordSession(email, password)
+      await account.createEmailPasswordSession(email, password)
 
-  //     const appwriteUser: Models.User<Models.Preferences> = await account.get()
-  //     setUser(appwriteUser)
+      const appwriteUser: Models.User<Models.Preferences> = await account.get()
+      setUser(appwriteUser)
 
-  //     router.push("/")
-  //   } catch (error) {
-  //     console.error("Signup error:", error)
-  //     alert("Failed to register: " + (error as Error).message)
-  //   }
-  // }
+      router.push("/reservations")
+    } catch (error) {
+      console.error("Signup error:", error)
+      alert("Failed to register: " + (error as Error).message)
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -56,14 +56,14 @@ export default function SignUpForm() {
           </div>
           <h1 className="text-4xl font-bold">Join Us</h1>
           <p className="mt-4 text-[#f0f0f0]">
-            Create an account to manage appointments and more.
+            Create an account to manage reservations and more.
           </p>
         </div>
       </div>
 
       <div className="md:flex-1 flex items-center justify-center p-8 bg-white">
         <form
-          // onSubmit={handleSignUp}
+          onSubmit={handleSignUp}
           className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md"
         >
           <h2 className="text-2xl text-center font-semibold text-gray-900">
@@ -105,7 +105,7 @@ export default function SignUpForm() {
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2
                          placeholder-gray-400 shadow-sm focus:border-[#1a1a1a] focus:ring
-                         focus:ring-blue-200 focus:ring-opacity-50"
+                         focus:ring-blue-200 focus:ring-opacity-50 text-gray-800"
               placeholder="you@example.com"
             />
           </div>
@@ -125,7 +125,7 @@ export default function SignUpForm() {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2
                          placeholder-gray-400 shadow-sm focus:border-[#1a1a1a] focus:ring
-                         focus:ring-blue-200 focus:ring-opacity-50"
+                         focus:ring-blue-200 focus:ring-opacity-50 text-gray-800"
               placeholder="••••••••"
             />
           </div>

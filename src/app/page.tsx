@@ -11,7 +11,7 @@ import ImageCarousel from "./components/ImageCarousel"
 
 const page = () => {
   return (
-    <div>
+    <div className="bg-[#1a1a1a]">
       <Navbar />
       <Hero />
       <ImageSection image={about} />
