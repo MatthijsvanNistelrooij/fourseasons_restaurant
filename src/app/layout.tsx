@@ -3,6 +3,7 @@ import { Playfair_Display, Lato } from "next/font/google"
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
 import { Toaster } from "sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 const playfair = Playfair_Display({
   variable: "--font-display",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${lato.variable} antialiased`}>
         <AuthProvider>
           {children}
+          <Analytics />
           <Toaster />
         </AuthProvider>
       </body>
