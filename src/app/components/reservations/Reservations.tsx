@@ -188,7 +188,6 @@ const Reservations = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Status</TableHead>
                 <TableHead>Naam</TableHead>
                 <TableHead
                   onClick={() =>
@@ -198,6 +197,7 @@ const Reservations = () => {
                 >
                   Datum / Tijd {sortDirection === "asc" ? "↑" : "↓"}
                 </TableHead>
+                <TableHead>Status</TableHead>
                 <TableHead>Email</TableHead>
                 <TableHead>Telefoon</TableHead>
                 <TableHead>Grootte</TableHead>
@@ -208,18 +208,19 @@ const Reservations = () => {
             <TableBody>
               {paginatedReservations.map((res) => (
                 <TableRow key={res.$id}>
-                  <TableCell>
-                    <StatusPillDropdown
-                      reservation={res}
-                      onUpdate={handleEditReservation}
-                    />
-                  </TableCell>
                   <TableCell>{res.name}</TableCell>
+
                   <TableCell>
                     {new Date(res.slot).toLocaleString("nl-NL", {
                       dateStyle: "short",
                       timeStyle: "short",
                     })}
+                  </TableCell>
+                  <TableCell>
+                    <StatusPillDropdown
+                      reservation={res}
+                      onUpdate={handleEditReservation}
+                    />
                   </TableCell>
                   <TableCell>{res.email}</TableCell>
                   <TableCell>{res.phone}</TableCell>

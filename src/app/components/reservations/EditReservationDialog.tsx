@@ -111,8 +111,6 @@ export const EditReservationDialog = ({
             onChange={(e) => setFormData({ ...formData, slot: e.target.value })}
             required
           />
-
-          <label>Status</label>
           <Select
             value={formData.status}
             onValueChange={(value) =>
