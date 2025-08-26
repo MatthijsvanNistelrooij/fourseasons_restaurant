@@ -15,7 +15,6 @@
   }
 }
 
-
 body {
   @apply antialiased;
 }
@@ -136,4 +135,13 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::selection {
+  background: #cda36b;
+  color: #000;
+}
+::-moz-selection {
+  background: #cda36b;
+  color: #000;
 }
