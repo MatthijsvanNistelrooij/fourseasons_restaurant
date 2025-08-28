@@ -99,6 +99,7 @@ export const EditReservationDialog = ({
             className="border p-2 rounded"
             value={formData.notes || ""}
             placeholder="Opmerkingen"
+            rows={5}
             onChange={(e) =>
               setFormData({ ...formData, notes: e.target.value })
             }

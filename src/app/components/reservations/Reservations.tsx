@@ -119,33 +119,6 @@ const Reservations = () => {
     }
   }
 
-  // Helper functie
-  const renderStatusPill = (status: string) => {
-    let bgColor = ""
-    const textColor = "text-white"
-
-    switch (status) {
-      case "pending":
-        bgColor = "bg-orange-400"
-        break
-      case "confirmed":
-        bgColor = "bg-green-500"
-        break
-      case "cancelled":
-        bgColor = "bg-red-500"
-        break
-      default:
-        bgColor = "bg-gray-400"
-    }
-
-    return (
-      <span
-        className={`px-2 py-1 rounded-full text-xs font-semibold ${bgColor} ${textColor}`}
-      >
-        {status.charAt(0).toUpperCase() + status.slice(1)}
-      </span>
-    )
-  }
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">

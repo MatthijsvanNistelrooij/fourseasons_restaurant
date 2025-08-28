@@ -32,12 +32,15 @@ export const getAllReservations = async () => {
 }
 
 export const updateReservation = async (id: string, data: Reservation) => {
+  // Strip Appwrite system fields
+  const { $id, $createdAt, $updatedAt, ...safeData } = data
+
   const res = await fetch(`/api/reservations/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(safeData),
   })
 
   if (!res.ok) {
