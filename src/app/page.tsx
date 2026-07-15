@@ -8,8 +8,15 @@ import ImageSection from "./components/ImageSection"
 import welcome from "/public/four_seasons_welcome.png"
 import about from "/public/assets/about.jpg"
 import ImageCarousel from "./components/ImageCarousel"
+import Maintenance from "./components/Maintenance"
 
 const page = () => {
+  const maintenanceMode = true
+
+  if (maintenanceMode) {
+    return <Maintenance />
+  }
+
   return (
     <div className="bg-[#1a1a1a]">
       <Navbar />
