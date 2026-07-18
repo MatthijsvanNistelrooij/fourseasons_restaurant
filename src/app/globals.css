@@ -17,6 +17,7 @@
 
 body {
   @apply antialiased;
+  background-color: #1a1a1a;
 }
 
 @theme inline {
