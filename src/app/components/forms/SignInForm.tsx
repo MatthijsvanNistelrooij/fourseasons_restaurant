@@ -3,11 +3,9 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { account } from "@/appwrite"
 import Image from "next/image"
 import logo from "/public/logo.png"
-
-import { Models } from "node-appwrite"
+import { createClient } from "@/lib/supabase/client"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/context/AuthContext"
@@ -26,11 +24,15 @@ export default function SignInForm() {
     e.preventDefault()
 
     try {
-      await account.createEmailPasswordSession(email, password)
+      const supabase = createClient()
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
 
-      const sessionUser: Models.User<Models.Preferences> = await account.get()
-      setUser(sessionUser)
+      if (error) throw error
 
+      setUser(data.user)
       router.push("/reservations")
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {

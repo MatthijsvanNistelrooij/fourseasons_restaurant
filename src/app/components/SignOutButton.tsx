@@ -1,10 +1,9 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
-
 import { useRouter } from "next/navigation"
 import { LogOutIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { account } from "@/appwrite"
+import { createClient } from "@/lib/supabase/client"
 
 export default function SignOutButton() {
   const { setUser } = useAuth()
@@ -12,7 +11,8 @@ export default function SignOutButton() {
 
   const handleSignOut = async () => {
     try {
-      await account.deleteSession("current")
+      const supabase = createClient()
+      await supabase.auth.signOut()
       setUser(null)
       router.push("/sign-in")
     } catch (error) {

@@ -6,9 +6,7 @@ import Link from "next/link"
 import { useAuth } from "@/context/AuthContext"
 import Image from "next/image"
 import logo from "/public/logo.png"
-
-import { account } from "@/appwrite"
-import { ID, Models } from "node-appwrite"
+import { createClient } from "@/lib/supabase/client"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -27,14 +25,26 @@ export default function SignUpForm() {
     e.preventDefault()
 
     try {
-      await account.create(ID.unique(), email, password, name)
+      const supabase = createClient()
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            full_name: name,
+          },
+        },
+      })
 
-      await account.createEmailPasswordSession(email, password)
+      if (error) throw error
 
-      const appwriteUser: Models.User<Models.Preferences> = await account.get()
-      setUser(appwriteUser)
-
-      router.push("/reservations")
+      if (data.user) {
+        setUser(data.user)
+        router.push("/reservations")
+      } else {
+        alert("Check your email to confirm your account before signing in.")
+        router.push("/sign-in")
+      }
     } catch (error) {
       console.error("Signup error:", error)
       alert("Failed to register: " + (error as Error).message)

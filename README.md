@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Four Seasons Restaurant
 
-## Getting Started
+Next.js website for Four Seasons Restaurant, with online reservations and a staff admin panel.
 
-First, run the development server:
+## Stack
+
+- **Next.js 15** (App Router)
+- **Supabase** — Postgres database + email/password auth
+- **Tailwind CSS** + shadcn/ui
+
+## Setup
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Create a Supabase project
+
+1. Go to [https://supabase.com](https://supabase.com) and create a free project.
+2. Open **Project Settings → API** and copy:
+   - Project URL
+   - `anon` public key
+
+### 3. Environment variables
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+### 4. Create the database table
+
+In the Supabase dashboard, open **SQL → New query**, paste the contents of [`supabase/schema.sql`](./supabase/schema.sql), and run it.
+
+This creates the `reservations` table and RLS policies:
+
+| Who | Can |
+|---|---|
+| Anyone (public site) | Create reservations |
+| Signed-in staff | Read, update, delete reservations |
+
+### 5. Auth settings
+
+In **Authentication → Providers**, ensure **Email** is enabled.
+
+Optional:
+
+- Disable **Confirm email** under Authentication → Providers → Email if you want staff accounts to work immediately after sign-up (handy during development).
+- Create staff accounts via the app’s `/sign-up` page, or invite users from the Supabase dashboard.
+
+### 6. Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Public site: book via **Reserveren**
+- Staff panel: [http://localhost:3000/reservations](http://localhost:3000/reservations) (requires sign-in)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Reservation fields
 
-## Learn More
+| Field | Type | Notes |
+|---|---|---|
+| `name` | text | Guest name |
+| `slot` | timestamptz | Date/time of reservation |
+| `email` | text | Guest email |
+| `phone` | text | Guest phone |
+| `size` | integer | Party size |
+| `notes` | text | Optional |
+| `status` | text | `pending` \| `confirmed` \| `cancelled` |
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy on Vercel (or similar) and set the same `NEXT_PUBLIC_SUPABASE_*` environment variables in the hosting dashboard.

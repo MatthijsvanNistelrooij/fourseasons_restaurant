@@ -19,7 +19,7 @@ import {
   deleteReservation,
   getAllReservations,
   updateReservation,
-} from "@/appwrite"
+} from "@/lib/reservations"
 import SignOutButton from "../SignOutButton"
 import { EditReservationDialog } from "./EditReservationDialog"
 import { DeleteReservationDialog } from "./DeleteReservationDialog"
@@ -48,22 +48,7 @@ const Reservations = () => {
   useEffect(() => {
     async function fetchReservations() {
       try {
-        const allReservationsRaw = await getAllReservations()
-        const allReservations: Reservation[] = allReservationsRaw.map(
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (item: any) => ({
-            $id: item.$id,
-            $createdAt: item.$createdAt,
-            $updatedAt: item.$updatedAt,
-            name: item.name,
-            slot: item.slot,
-            email: item.email,
-            phone: item.phone,
-            size: item.size,
-            notes: item.notes,
-            status: item.status,
-          })
-        )
+        const allReservations = await getAllReservations()
         setReservations(allReservations)
       } catch (err) {
         console.error(err)
@@ -79,9 +64,9 @@ const Reservations = () => {
   const handleDelete = async () => {
     if (!deletingReservation) return
     try {
-      await deleteReservation(deletingReservation.$id)
+      await deleteReservation(deletingReservation.id)
       setReservations((prev) =>
-        prev.filter((r) => r.$id !== deletingReservation.$id)
+        prev.filter((r) => r.id !== deletingReservation.id),
       )
       setDeletingReservation(null)
       setIsDeleteDialogOpen(false)
@@ -102,23 +87,22 @@ const Reservations = () => {
 
   const paginatedReservations = sortedReservations.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   )
 
   const handleEditReservation = async (updatedReservation: Reservation) => {
     try {
-      await updateReservation(updatedReservation.$id, updatedReservation)
+      await updateReservation(updatedReservation.id, updatedReservation)
       setReservations((prev) =>
         prev.map((r) =>
-          r.$id === updatedReservation.$id ? updatedReservation : r
-        )
+          r.id === updatedReservation.id ? updatedReservation : r,
+        ),
       )
       setIsDialogOpen(false)
     } catch (err) {
       console.error("Failed to update", err)
     }
   }
-
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
@@ -157,86 +141,90 @@ const Reservations = () => {
           ))}
         </div>
 
-        <div className="border rounded overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Naam</TableHead>
-                <TableHead
-                  onClick={() =>
-                    setSortDirection(sortDirection === "asc" ? "desc" : "asc")
-                  }
-                  className="cursor-pointer"
-                >
-                  Datum / Tijd {sortDirection === "asc" ? "↑" : "↓"}
-                </TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Telefoon</TableHead>
-                <TableHead>Grootte</TableHead>
-                <TableHead>Opmerkingen</TableHead>
-                <TableHead />
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {paginatedReservations.map((res) => (
-                <TableRow key={res.$id}>
-                  <TableCell>{res.name}</TableCell>
-
-                  <TableCell>
-                    {new Date(res.slot).toLocaleString("nl-NL", {
-                      dateStyle: "short",
-                      timeStyle: "short",
-                    })}
-                  </TableCell>
-                  <TableCell>
-                    <StatusPillDropdown
-                      reservation={res}
-                      onUpdate={handleEditReservation}
-                    />
-                  </TableCell>
-                  <TableCell>{res.email}</TableCell>
-                  <TableCell>{res.phone}</TableCell>
-                  <TableCell>{res.size}</TableCell>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <TableCell className="max-w-[200px] truncate cursor-pointer">
-                          {res.notes || "-"}
-                        </TableCell>
-                      </TooltipTrigger>
-                      <TooltipContent className="max-w-sm whitespace-pre-line">
-                        {res.notes}
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                  <TableCell className="flex justify-end gap-2">
-                    <Button
-                      onClick={() => {
-                        setEditingReservation(res)
-                        setIsDialogOpen(true)
-                      }}
-                      size="sm"
-                      className="p-0 bg-transparent text-gray-800 hover:bg-white cursor-pointer m-0"
-                    >
-                      <Edit size={12} />
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
-                      onClick={() => {
-                        setDeletingReservation(res)
-                        setIsDeleteDialogOpen(true)
-                      }}
-                    >
-                      <Trash size={12} />
-                    </Button>
-                  </TableCell>
+        {reservations.length === 0 ? (
+          <p className="text-gray-500 p-20 border rounded-2xl">Geen reserveringen gevonden.</p>
+        ) : (
+          <div className="border rounded overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Naam</TableHead>
+                  <TableHead
+                    onClick={() =>
+                      setSortDirection(sortDirection === "asc" ? "desc" : "asc")
+                    }
+                    className="cursor-pointer"
+                  >
+                    Datum / Tijd {sortDirection === "asc" ? "↑" : "↓"}
+                  </TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Email</TableHead>
+                  <TableHead>Telefoon</TableHead>
+                  <TableHead>Grootte</TableHead>
+                  <TableHead>Opmerkingen</TableHead>
+                  <TableHead />
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+              </TableHeader>
+              <TableBody>
+                {paginatedReservations.map((res) => (
+                  <TableRow key={res.id}>
+                    <TableCell>{res.name}</TableCell>
+
+                    <TableCell>
+                      {new Date(res.slot).toLocaleString("nl-NL", {
+                        dateStyle: "short",
+                        timeStyle: "short",
+                      })}
+                    </TableCell>
+                    <TableCell>
+                      <StatusPillDropdown
+                        reservation={res}
+                        onUpdate={handleEditReservation}
+                      />
+                    </TableCell>
+                    <TableCell>{res.email}</TableCell>
+                    <TableCell>{res.phone}</TableCell>
+                    <TableCell>{res.size}</TableCell>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <TableCell className="max-w-[200px] truncate cursor-pointer">
+                            {res.notes || "-"}
+                          </TableCell>
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-sm whitespace-pre-line">
+                          {res.notes}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                    <TableCell className="flex justify-end gap-2">
+                      <Button
+                        onClick={() => {
+                          setEditingReservation(res)
+                          setIsDialogOpen(true)
+                        }}
+                        size="sm"
+                        className="p-0 bg-transparent text-gray-800 hover:bg-white cursor-pointer m-0"
+                      >
+                        <Edit size={12} />
+                      </Button>
+                      <Button
+                        size="sm"
+                        className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
+                        onClick={() => {
+                          setDeletingReservation(res)
+                          setIsDeleteDialogOpen(true)
+                        }}
+                      >
+                        <Trash size={12} />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        )}
 
         {filteredReservations.length > itemsPerPage && (
           <Pagination
