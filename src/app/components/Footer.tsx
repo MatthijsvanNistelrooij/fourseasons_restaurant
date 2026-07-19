@@ -103,12 +103,12 @@ const Footer = () => {
           Copyright © 2025 Restaurant Four Seasons. All rights reserved.
         </p>
       </div>
-      <div className="flex w-full justify-end bg-black p-5">
+      <div className="flex w-full justify-end bg-#1a1a1a p-5">
         <Link
           target="_blank"
           rel="noopener noreferrer"
           href={"https://www.matthijsvannistelrooij.nl"}
-          className="flex text-xs text-black hover:text-gray-500"
+          className="flex text-xs text-[#1a1a1a] hover:text-gray-500"
         >
           Powered by
           <Image
