@@ -33,13 +33,9 @@ export const DeleteReservationDialog = ({
         </DialogHeader>
 
         <p className="text-sm text-gray-400 mt-5 mb-4">
-          Wil je deze afspraak van{" "}
-          <strong className="text-white">{reservation.name}</strong> op{" "}
-          <strong className="text-white">{" "}
-            {new Date(reservation.slot).toLocaleDateString("nl-NL")}
-          </strong>{" "}
-          om <strong className="text-white">{reservation.slot}</strong>{" "}
-          verwijderen?
+          Weet je zeker dat je deze afspraak van
+          <strong className="text-white"> {reservation.name} </strong>
+          wilt verwijderen?
         </p>
         <DialogFooter>
           <Button

@@ -48,25 +48,28 @@ create policy "Anyone can create reservations"
 
 -- Only signed-in staff can read reservations
 drop policy if exists "Authenticated users can read reservations" on public.reservations;
-create policy "Authenticated users can read reservations"
+drop policy if exists "Staff can read reservations" on public.reservations;
+create policy "Staff can read reservations"
   on public.reservations
   for select
   to authenticated
-  using (true);
+  using ((auth.jwt() -> 'app_metadata' ->> 'role') = 'staff');
 
 -- Only signed-in staff can update reservations
 drop policy if exists "Authenticated users can update reservations" on public.reservations;
-create policy "Authenticated users can update reservations"
+drop policy if exists "Staff can update reservations" on public.reservations;
+create policy "Staff can update reservations"
   on public.reservations
   for update
   to authenticated
-  using (true)
-  with check (true);
+  using ((auth.jwt() -> 'app_metadata' ->> 'role') = 'staff')
+  with check ((auth.jwt() -> 'app_metadata' ->> 'role') = 'staff');
 
 -- Only signed-in staff can delete reservations
 drop policy if exists "Authenticated users can delete reservations" on public.reservations;
-create policy "Authenticated users can delete reservations"
+drop policy if exists "Staff can delete reservations" on public.reservations;
+create policy "Staff can delete reservations"
   on public.reservations
   for delete
   to authenticated
-  using (true);
+  using ((auth.jwt() -> 'app_metadata' ->> 'role') = 'staff');

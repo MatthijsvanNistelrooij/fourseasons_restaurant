@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#1a1a1a] text-white border-b border-b-[#f0f0f0] sticky top-0 z-30">
-      <div className="max-w-[1500px] mx-auto flex items-center justify-between px-4 py-5">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 py-3.5 md:py-4">
         <div
           className="flex items-center gap-3 cursor-pointer"
           onClick={handleClickLogo}
@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
 
         <nav
-          className="hidden lg:flex items-center gap-14"
+          className="hidden lg:flex items-center gap-10 text-sm"
           style={{ fontFamily: "var(--font-body)" }}
         >
           {links.map((link) => (
@@ -67,7 +67,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          <ReservationButton fontSize={"text-[1rem] md:text-[1rem] py-2"} />
+          <ReservationButton fontSize={"text-sm py-2"} />
         </nav>
 
         <button
@@ -97,7 +97,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          <ReservationButton fontSize={"text-[1rem] md:text-[1rem] py-2"} />
+          <ReservationButton fontSize={"text-sm py-2"} />
         </div>
       )}
     </header>
