@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react"
-import { createReservation } from "@/appwrite"
+import { createReservation } from "@/lib/reservations"
 import {
   Dialog,
   DialogContent,

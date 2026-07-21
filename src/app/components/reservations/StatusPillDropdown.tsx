@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Reservation } from "@/types"
 import {
   DropdownMenu,
@@ -16,7 +15,7 @@ export const StatusPillDropdown = ({
   reservation,
   onUpdate,
 }: StatusPillDropdownProps) => {
-  const [status, setStatus] = useState(reservation.status)
+  const { status } = reservation
 
   const getColor = (status: string) => {
     switch (status) {
@@ -32,7 +31,6 @@ export const StatusPillDropdown = ({
   }
 
   const handleSelect = (newStatus: Reservation["status"]) => {
-    setStatus(newStatus)
     onUpdate({ ...reservation, status: newStatus })
   }
 

@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Four Seasons Restaurant
+
+Restaurant website built with Next.js and Supabase featuring:
+
+- Public reservation form
+- Staff authentication
+- Reservation management dashboard
+
+## Tech Stack
+
+- Next.js 15
+- Supabase
+- Tailwind CSS
+- shadcn/ui
 
 ## Getting Started
 
-First, run the development server:
+### Install
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+## Staff access
+
+Reservation data is protected by Supabase RLS. Only users whose `app_metadata.role` is `staff` can read, update, or delete reservations. Guests can submit reservations without an account.
+
+After applying the latest migration, create staff users in the Supabase Auth dashboard, then run this in the Supabase SQL Editor for each staff member (substitute their email):
+
+```sql
+update auth.users
+set raw_app_meta_data = coalesce(raw_app_meta_data, '{}'::jsonb) || '{"role":"staff"}'::jsonb
+where email = 'staff@example.com';
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The staff member must sign out and back in after their role is assigned, so their JWT receives the new role. The service-role key is not needed by this application and must not be exposed to the browser.

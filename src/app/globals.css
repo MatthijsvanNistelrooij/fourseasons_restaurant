@@ -5,18 +5,19 @@
 
 @layer components {
   .max-container {
-    max-width: 1520px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
   .mid-container {
-    max-width: 1265px;
+    max-width: 1120px;
     margin: 0 auto;
   }
 }
 
 body {
   @apply antialiased;
+  background-color: #1a1a1a;
 }
 
 @theme inline {

@@ -2,12 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { account } from "@/appwrite"
 import Image from "next/image"
 import logo from "/public/logo.png"
-
-import { Models } from "node-appwrite"
+import { createClient } from "@/lib/supabase/client"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/context/AuthContext"
@@ -19,19 +16,38 @@ export default function SignInForm() {
   const { user, setUser } = useAuth()
 
   useEffect(() => {
-    if (user) router.push("/reservations")
-  }, [user, router])
+    if (!user) return
+
+    if (user.app_metadata.role === "staff") {
+      router.replace("/reservations")
+      return
+    }
+
+    const supabase = createClient()
+    void supabase.auth.signOut().then(() => setUser(null))
+  }, [user, router, setUser])
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
-      await account.createEmailPasswordSession(email, password)
+      const supabase = createClient()
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
 
-      const sessionUser: Models.User<Models.Preferences> = await account.get()
-      setUser(sessionUser)
+      if (error) throw error
 
-      router.push("/reservations")
+      if (!data.user || data.user.app_metadata.role !== "staff") {
+        await supabase.auth.signOut()
+        setUser(null)
+        alert("This account is not authorized to manage reservations.")
+        return
+      }
+
+      setUser(data.user)
+      router.replace("/reservations")
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       alert("Sign-in failed: " + err.message)
@@ -110,15 +126,6 @@ export default function SignInForm() {
             Sign In
           </Button>
 
-          <p className="text-center text-sm text-gray-600">
-            Dont have an account?{" "}
-            <Link
-              href="/sign-up"
-              className="text-[#cda36b] hover:underline font-medium"
-            >
-              Register
-            </Link>
-          </p>
         </form>
       </div>
     </div>

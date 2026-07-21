@@ -10,16 +10,20 @@ const ImageCarousel = () => {
   const images = [img1, img2, img3, img4, img5]
 
   return (
-    <div className="w-full flex justify-center items-start">
-      <div className="flex space-x-6 lg:space-x-28">
+    <div className="w-full overflow-x-auto">
+      <div className="flex justify-center gap-4 md:gap-8 lg:gap-12 px-4 min-w-max md:min-w-0 mx-auto max-w-[1400px]">
         {images.map((img, index) => (
-          <div key={index} style={{ marginTop: `${index * 4}%` }}>
+          <div
+            key={index}
+            className="shrink-0"
+            style={{ marginTop: `${index * 2.5}%` }}
+          >
             <Image
               src={img}
-              alt={`hero-${index}`}
-              className="h-auto object-contain"
-              width={295}
-              height={100}
+              alt={`gallery-${index + 1}`}
+              className="h-auto w-40 sm:w-48 md:w-52 lg:w-56 object-contain"
+              width={240}
+              height={320}
               priority
             />
           </div>

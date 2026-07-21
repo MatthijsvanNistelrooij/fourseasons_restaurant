@@ -1,12 +1,5 @@
-import SignUpForm from "@/app/components/forms/SignUpForm"
-import React from "react"
+import { redirect } from "next/navigation"
 
-const Page = () => {
-  return (
-    <div className="flex-center glassmorphism-auth h-screen w-full">
-      <SignUpForm />
-    </div>
-  )
+export default function SignUpPage() {
+  redirect("/sign-in")
 }
-
-export default Page

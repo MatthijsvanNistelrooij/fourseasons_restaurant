@@ -11,7 +11,7 @@ import ImageCarousel from "./components/ImageCarousel"
 import Maintenance from "./components/Maintenance"
 
 const page = () => {
-  const maintenanceMode = true
+  const maintenanceMode = true // Set to true to enable maintenance mode
 
   if (maintenanceMode) {
     return <Maintenance />

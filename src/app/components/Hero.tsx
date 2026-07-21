@@ -1,9 +1,9 @@
 export default function Hero() {
   return (
     <section className="bg-[#1a1a1a] text-gray-200">
-      <div id="home" className="max-w-[1500px] mx-auto px-4 pt-10 md:pt-20">
+      <div id="home" className="max-w-[1400px] mx-auto px-4 pt-8 md:pt-14">
         <h1
-          className="text-[4.5rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[11.5rem] leading-none"
+          className="text-[clamp(2.75rem,9vw,7.5rem)] leading-none tracking-tight"
           style={{ fontFamily: "var(--font-display)", color: "#f0f0f0" }}
         >
           FOUR SEASONS
@@ -11,20 +11,20 @@ export default function Hero() {
       </div>
 
       <div
-        className="max-w-[1500px] flex flex-col mt-10 md:text-lg sm:flex-row mx-auto px-4 py-6 md:py-12 justify-between"
+        className="max-w-[1400px] flex flex-col mt-6 md:mt-8 text-sm md:text-base sm:flex-row mx-auto px-4 py-5 md:py-8 justify-between"
         style={{ fontFamily: "var(--font-body)" }}
       >
-        <div className="space-y-4">
-          <div className="pb-2 border-b font-light border-gray-200 w-64 sm:w-56 md:w-64">
+        <div className="space-y-3">
+          <div className="pb-2 border-b font-light border-gray-200 w-56 sm:w-52 md:w-60">
             <p>Enjoy with us</p>
             <p>Reitemakersrijge 3, Groningen</p>
           </div>
-          <div className="pb-2 border-b font-light border-gray-200 w-64 sm:w-56 md:w-64">
+          <div className="pb-2 border-b font-light border-gray-200 w-56 sm:w-52 md:w-60">
             <p>+31 6 17 28 490</p>
           </div>
         </div>
 
-        <div className="flex flex-col font-light space-y-1 mt-4 md:mt-5 md:text-right">
+        <div className="flex flex-col font-light space-y-1 mt-4 md:mt-0 md:text-right">
           <p>Ma - Zo</p>
           <p>12:00 - 20:00</p>
         </div>

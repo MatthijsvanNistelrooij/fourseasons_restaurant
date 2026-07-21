@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server"
-import { databases } from "@/appwrite"
-import { appwriteConfig } from "@/appwrite/config"
+import { createClient } from "@/lib/supabase/server"
 
-const databaseId = appwriteConfig.databaseId
-const collectionId = appwriteConfig.reservationsCollectionId
-export async function PUT(request: NextRequest) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const id = request.nextUrl.pathname.split("/").pop()
+    const { id } = await params
     const data = await request.json()
 
     if (!id || !data) {
@@ -16,42 +16,72 @@ export async function PUT(request: NextRequest) {
       )
     }
 
-    await databases.updateDocument(databaseId, collectionId, id, data)
+    const supabase = await createClient()
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    const { error } = await supabase
+      .from("reservations")
+      .update({ ...data, updated_at: new Date().toISOString() })
+      .eq("id", id)
+
+    if (error) throw error
 
     return NextResponse.json(
-      { message: "Appointment updated" },
+      { message: "Reservation updated" },
       { status: 200 }
     )
   } catch (error) {
-    console.error("Failed to update appointment:", error)
+    console.error("Failed to update reservation:", error)
     return NextResponse.json(
-      { error: "Failed to update appointment" },
+      { error: "Failed to update reservation" },
       { status: 500 }
     )
   }
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
-    const id = request.nextUrl.pathname.split("/").pop()
+    const { id } = await params
 
     if (!id) {
       return NextResponse.json(
-        { error: "Missing appointment ID" },
+        { error: "Missing reservation ID" },
         { status: 400 }
       )
     }
 
-    await databases.deleteDocument(databaseId, collectionId, id)
+    const supabase = await createClient()
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    const { error } = await supabase.from("reservations").delete().eq("id", id)
+
+    if (error) throw error
 
     return NextResponse.json(
-      { message: "Appointment deleted" },
+      { message: "Reservation deleted" },
       { status: 200 }
     )
   } catch (error) {
-    console.error("Failed to delete appointment:", error)
+    console.error("Failed to delete reservation:", error)
     return NextResponse.json(
-      { error: "Failed to delete appointment" },
+      { error: "Failed to delete reservation" },
       { status: 500 }
     )
   }
